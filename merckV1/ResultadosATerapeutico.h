@@ -17,6 +17,7 @@
     int indice;
     UIScrollView *vistaScroll;
     NSArray *definiciones;
+    NSData * datos;
     
     //UIView *vistaMovilDerecha;
     
@@ -37,7 +38,11 @@
     
     IBOutlet UILabel *titulo1;
     IBOutlet UILabel *titulo2;
-    IBOutlet UILabel *titulo3;    
+    IBOutlet UILabel *titulo3;
+    
+    IBOutlet UILabel *fecha;
+    
+    UIBarButtonItem *reporteButton;
     
 }
 
@@ -45,9 +50,10 @@
 
 @property (nonatomic, assign) int indice;
 
-
 @property (nonatomic, retain) IBOutlet UIScrollView *vistaScroll;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *reporteButton;
 @property (nonatomic, retain) NSArray *definiciones;
+@property (nonatomic, retain) NSData *datos;
 
 -(void) transicionDeVista:(UIView *) view haciaAlpha:(float) valorAlpha;
 

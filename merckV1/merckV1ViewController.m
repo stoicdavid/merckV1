@@ -48,12 +48,26 @@
     
     for (ElementosDerecha *unElemento in self.definicionesIzquierda)
     {
+        
+        if(!unElemento.excluyente && ([unElemento.selecccionesDerecha count] == unElemento.numeroElementos))
+        {
+            [self habilitarBotonesIzquierda:(UIButton *)[self.view viewWithTag:self.indiceIzquierdoSeleccionado+kIndicesIzquierdo]];
+        }
+            
         if (unElemento.excluyente && [unElemento.selecccionesDerecha count] == 0)
         {
 
-
             return NO;
         }
+        
+        if (!unElemento.excluyente && ([unElemento.selecccionesDerecha count] != unElemento.numeroElementos))
+        {
+            
+            return NO;
+        }
+        
+
+        
     }
     
     return resultado;   
@@ -197,11 +211,12 @@
     [self aparecerBoton:botonDerechaMenos enTiempo:0.5]; 
     
     if(elementoCorrespondiente.excluyente){
+        [self habilitarBotonesIzquierda:(UIButton *)[self.view viewWithTag:self.indiceIzquierdoSeleccionado+kIndicesIzquierdo]];
         [self desaparecerBotonesMedioEnTiempo:0.0];
     }
 
     [self actualizarBotones:sender];
-    [self habilitarBotonesIzquierda:(UIButton *)[self.view viewWithTag:self.indiceIzquierdoSeleccionado+kIndicesIzquierdo]];
+
 
 }
 
@@ -237,6 +252,25 @@
 }
 
 -(IBAction)dismissOption:(UIButton *)sender{
+    
+    if(sender.tag-kIndicesDerecho<15){
+        self.indiceMedioSeleccionado = sender.tag - kIndicesMedio;
+    }else{
+        self.indiceMedioSeleccionado = sender.tag - kIndicesMas;    
+        
+    }
+    
+    NSNumber *seleccionEnNumero = [NSNumber numberWithInt:self.indiceMedioSeleccionado];
+    
+    ElementosDerecha *elementoCorrespondiente = (ElementosDerecha *)[self.definicionesIzquierda objectAtIndex:self.indiceIzquierdoSeleccionado];
+    
+    if (![elementoCorrespondiente.selecccionesDerecha containsObject:seleccionEnNumero])
+    {
+        [elementoCorrespondiente.selecccionesDerecha addObject:seleccionEnNumero];        
+    }
+    
+    [self actualizarBotones:sender];
+//    [self habilitarBotonesIzquierda:(UIButton *)[self.view viewWithTag:self.indiceIzquierdoSeleccionado+kIndicesIzquierdo]];
     [self desaparecerBoton:sender enTiempo:0.2];
     [self desaparecerBoton:(UIButton *)[self.view viewWithTag:sender.tag-300] enTiempo:0.2];
     [self desaparecerBoton:(UIButton *)[self.view viewWithTag:sender.tag+100] enTiempo:0.2];
@@ -524,7 +558,7 @@
                                    [NSNumber numberWithInt:1], // 10
                                    [NSNumber numberWithInt:2], // 11
                                    [NSNumber numberWithInt:3], // 12
-                                   [NSNumber numberWithInt:0], // 12                                          
+                                   //[NSNumber numberWithInt:0], // 12                                          
                                    nil];
     
     

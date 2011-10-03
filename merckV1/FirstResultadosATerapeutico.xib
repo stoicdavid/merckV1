@@ -251,7 +251,6 @@
 						<string key="NSFrame">{{271, 476}, {779, 93}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:345</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -273,6 +272,36 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">22</double>
+							<int key="NSfFlags">16</int>
+						</object>
+					</object>
+					<object class="IBUILabel" id="478926941">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{30, 619}, {190, 73}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:345</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<string key="IBUIText"/>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">2</int>
+							<bytes key="NSRGB">MCAwLjM1Mjk0MTE4NTIgMC42NjI3NDUxMTgxAA</bytes>
+						</object>
+						<nil key="IBUIHighlightedColor"/>
+						<int key="IBUIBaselineAdjustment">1</int>
+						<float key="IBUIMinimumFontSize">10</float>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<int key="type">1</int>
+							<double key="pointSize">17</double>
+						</object>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">17</double>
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
@@ -355,6 +384,14 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 					<int key="connectionID">35</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">fecha</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="478926941"/>
+					</object>
+					<int key="connectionID">38</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">regresarADiapositiva5:</string>
 						<reference key="source" ref="393736306"/>
@@ -401,6 +438,7 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 							<reference ref="295191491"/>
 							<reference ref="578590328"/>
 							<reference ref="801286696"/>
+							<reference ref="478926941"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -454,6 +492,11 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 						<reference key="object" ref="801286696"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">37</int>
+						<reference key="object" ref="478926941"/>
+						<reference key="parent" ref="766721923"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -475,6 +518,7 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 					<string>27.IBPluginDependency</string>
 					<string>28.IBPluginDependency</string>
 					<string>36.IBPluginDependency</string>
+					<string>37.IBPluginDependency</string>
 					<string>4.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
@@ -486,6 +530,7 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<real value="0.0"/>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -509,7 +554,7 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">36</int>
+			<int key="maxID">38</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -590,6 +635,7 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>add</string>
 							<string>add2</string>
+							<string>fecha</string>
 							<string>fluo</string>
 							<string>fluo2</string>
 							<string>kras</string>
@@ -598,12 +644,12 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 							<string>por2</string>
 							<string>qt</string>
 							<string>qt2</string>
+							<string>reporteButton</string>
 							<string>tipo</string>
 							<string>tipo2</string>
 							<string>titulo1</string>
 							<string>titulo2</string>
 							<string>titulo3</string>
-							<string>vistaMovilDerecha</string>
 							<string>vistaScroll</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -619,11 +665,12 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
+							<string>UIBarButtonItem</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
-							<string>UIView</string>
+							<string>UILabel</string>
 							<string>UIScrollView</string>
 						</object>
 					</object>
@@ -633,6 +680,7 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>add</string>
 							<string>add2</string>
+							<string>fecha</string>
 							<string>fluo</string>
 							<string>fluo2</string>
 							<string>kras</string>
@@ -641,12 +689,12 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 							<string>por2</string>
 							<string>qt</string>
 							<string>qt2</string>
+							<string>reporteButton</string>
 							<string>tipo</string>
 							<string>tipo2</string>
 							<string>titulo1</string>
 							<string>titulo2</string>
 							<string>titulo3</string>
-							<string>vistaMovilDerecha</string>
 							<string>vistaScroll</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -657,6 +705,10 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">add2</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">fecha</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
@@ -692,6 +744,10 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">reporteButton</string>
+								<string key="candidateClassName">UIBarButtonItem</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">tipo</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
@@ -710,10 +766,6 @@ ZSBkZSBQcm9ncmVzacOzbiwgUmVzZWNjacOzbiBIZXDDoXRpY2E</string>
 							<object class="IBToOneOutletInfo">
 								<string key="name">titulo3</string>
 								<string key="candidateClassName">UILabel</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">vistaMovilDerecha</string>
-								<string key="candidateClassName">UIView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">vistaScroll</string>

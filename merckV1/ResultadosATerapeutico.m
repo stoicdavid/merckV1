@@ -31,7 +31,8 @@
 
 @synthesize definiciones;
 @synthesize vistaScroll;
-
+@synthesize reporteButton;
+@synthesize datos;
 @synthesize indice;
 
 @synthesize popOverController;
@@ -64,27 +65,8 @@
 
 -(IBAction) enviarResultadosPorCorreo:(id)sender
 {
-    merckV1AppDelegate *delegado = [[UIApplication sharedApplication] delegate];
-    
-    UIGraphicsBeginImageContext(delegado.window.bounds.size);
-    [self.view viewWithTag:1000].alpha=0.0;
-    CALayer *test = delegado.window.layer;
-    [test renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-  //  [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    UIInterfaceOrientation orienta = [[UIApplication sharedApplication] statusBarOrientation];
-//    UIInterfaceOrientation orienta = (UIInterfaceOrientation)[[UIDevice currentDevice] orientation];
-    if (orienta ==UIInterfaceOrientationLandscapeLeft) {
-        image = [image imageRotatedByDegrees:90];        
-    }else{
-        image = [image imageRotatedByDegrees:-90];        
-    }
 
-    NSData * data = UIImagePNGRepresentation(image);
-    
-    [self emailImageWithImageData:data];    
+    [self emailImageWithImageData:self.datos];    
 }
 
 
@@ -121,7 +103,7 @@
 {
     // Called once the email is sent
     // Remove the email view controller  
-        [self.view viewWithTag:1000].alpha=1.0;
+        //[self.view viewWithTag:1000].alpha=1.0;
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -217,7 +199,7 @@
 //    
 //    self.vistaMovilDerecha.frame = CGRectMake(kMargenIzquierdo + (kEspacio*posicionResultadosSegundaVista), self.vistaMovilDerecha.frame.origin.y, self.vistaMovilDerecha.frame.size.width, self.vistaMovilDerecha.frame.size.height);
     
-    
+
     
     
     // Primera Etiqueta Individual:
@@ -438,8 +420,8 @@
     {
 //        [(UIImageView *)[self.view viewWithTag:kIndiceVistas + 8] setAlpha: 1.0];
 //        [(UIButton *)[self.view viewWithTag:kIndiceVistasDerecha + 8] setAlpha: 1.0];
-        [por setText:@"Tasa de Respuesta"];
-        [por2 setText:@"Tasa de Respuesta"];
+        [por setText:@"TR"];
+        [por2 setText:@"TR"];
         k++;
     }
     else
@@ -457,12 +439,12 @@
 //        [(UIImageView *)[self.view viewWithTag:kIndiceVistas + 9] setAlpha: 1.0];
 //        [(UIButton *)[self.view viewWithTag:kIndiceVistasDerecha + 9] setAlpha: 1.0];
         if (k>0) {
-            [por setText:[[por text] stringByAppendingString:@", Supervivencia Libre de Progresión"]];
-            [por2 setText:[[por2 text] stringByAppendingString:@"\nSupervivencia Libre de Progresión"]];
+            [por setText:[[por text] stringByAppendingString:@", SLP"]];
+            [por2 setText:[[por2 text] stringByAppendingString:@"\nSLP"]];
             k++;
         }else{
-            [por setText:@"Supervivencia Libre de Progresión"];
-            [por2 setText:@"Supervivencia Libre de Progresión"];
+            [por setText:@"SLP"];
+            [por2 setText:@"SLP"];
             k++;
         }
         
@@ -480,12 +462,12 @@
 //        [(UIImageView *)[self.view viewWithTag:kIndiceVistas + 10] setAlpha: 1.0];
 //        [(UIButton *)[self.view viewWithTag:kIndiceVistasDerecha + 10] setAlpha: 1.0];
         if (k>0) {
-            [por setText:[[por text] stringByAppendingString:@", Supervivencia Global"]];
-            [por2 setText:[[por2 text] stringByAppendingString:@"\nSupervivencia Global"]];
+            [por setText:[[por text] stringByAppendingString:@", SG"]];
+            [por2 setText:[[por2 text] stringByAppendingString:@"\nSG"]];
             k++;
         }else{
-            [por setText:@"Supervivencia Global"];
-            [por2 setText:@"Supervivencia Global"];
+            [por setText:@"SG"];
+            [por2 setText:@"SG"];
             k++;
         }
         
@@ -502,12 +484,12 @@
 //        [(UIImageView *)[self.view viewWithTag:kIndiceVistas + 11] setAlpha: 1.0];
 //        [(UIButton *)[self.view viewWithTag:kIndiceVistasDerecha + 11] setAlpha: 1.0];
         if (k>0) {
-            [por setText:[[por text] stringByAppendingString:@", Resección Hepática"]];
-            [por2 setText:[[por2 text] stringByAppendingString:@"\nResección Hepática"]];
+            [por setText:[[por text] stringByAppendingString:@", RH"]];
+            [por2 setText:[[por2 text] stringByAppendingString:@"\nRH"]];
             k++;
         }else{
-            [por setText:@"Resección Hepática"];
-            [por2 setText:@"Resección Hepática"];
+            [por setText:@"RH"];
+            [por2 setText:@"RH"];
             k++;
         }        
     }
@@ -540,6 +522,43 @@
     [self imprimirSelecciones];
     
 }
+
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    
+    NSDate *now = [NSDate date];
+	NSDateFormatter *formatter = nil;
+	formatter = [[NSDateFormatter alloc] init];
+	//[formatter setDateStyle:NSDateFormatterLongStyle];
+    [formatter setDateFormat:@" EEEE d MMM yyyy, h:mm a"];
+
+	[fecha setText:[formatter stringFromDate:now]];
+	[formatter release];
+
+    [self.view viewWithTag:1000].alpha=0.0;
+    //Capturar Tabla
+    merckV1AppDelegate *delegado = [[UIApplication sharedApplication] delegate];
+    UIGraphicsBeginImageContext(delegado.window.bounds.size);
+    
+
+    CALayer *test = delegado.window.layer;
+    [test renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIInterfaceOrientation orienta = [[UIApplication sharedApplication] statusBarOrientation];
+    if (orienta ==UIInterfaceOrientationLandscapeLeft) {
+        image = [image imageRotatedByDegrees:90];        
+    }else{
+        image = [image imageRotatedByDegrees:-90];        
+    }
+    
+    self.datos = UIImagePNGRepresentation(image);
+    //Fin Captura Tabla
+        [self.view viewWithTag:1000].alpha=1.0;
+}
+
+
 -(void) imprimirSelecciones
 {
     int i=0;
@@ -625,9 +644,11 @@
 
 - (void)viewDidLoad
 {
-    UIBarButtonItem *dis = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(regresarDiapositiva5)];
-    NSArray *a = [NSArray arrayWithObject:dis];
-    [self setToolbarItems:a animated:YES];
+    
+    [super viewDidLoad];
+//    UIBarButtonItem *dis = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(regresarDiapositiva5)];
+//    NSArray *a = [NSArray arrayWithObject:dis];
+//    [self setToolbarItems:a animated:YES];
     
     self.vistaScroll.delegate = self;
     
@@ -636,12 +657,19 @@
     UIView *vistaAResultados1 = [[[NSBundle mainBundle] loadNibNamed:@"FirstResultadosATerapeutico" owner:self options:nil] lastObject];					
     
     vistaAResultados1.frame = CGRectMake(0, 0, kPantallaAncho, kPantallaAlto);
-    [self.vistaScroll addSubview:vistaAResultados1];    
+    [self.vistaScroll addSubview:vistaAResultados1];   
+    
+    
+
+
+    
+  
     
     UIView *vistaAResultados2 = [[[NSBundle mainBundle] loadNibNamed:@"SecondResultadoATerapeutico" owner:self options:nil] lastObject];					
     
     vistaAResultados2.frame = CGRectMake(kPantallaAncho * 1, 0, kPantallaAncho, kPantallaAlto);
-    [self.vistaScroll addSubview:vistaAResultados2];    
+    [self.vistaScroll addSubview:vistaAResultados2];  
+ 
  
     UIView *vistaAResultados3 = [[[NSBundle mainBundle] loadNibNamed:@"ThirdResultadosATerapeutico" owner:self options:nil] lastObject];					
     
@@ -650,9 +678,13 @@
 
     
     
-    [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
+    
+
 }
+
+
 
 - (void)viewDidUnload
 {
@@ -666,7 +698,26 @@
     CGFloat anchoPagina = scrollView.frame.size.width;
     
     self.indice = (int)(self.vistaScroll.contentOffset.x / anchoPagina) ;
+    NSLog(@"%d",self.indice);
+    if(self.indice==2){
+       
+        self.reporteButton.enabled=YES;
+        
+        
+//        self.reporteButton = [[UIBarButtonItem alloc] initWithTitle:@"Reporte" style:UIBarButtonItemStyleBordered target:self action:@selector(enviarResultadosPorCorreo)];
+//        
+//        //(UIBarButtonItem *);
+//        //[reporteButton setEnabled:YES];
+//        self.navigationItem.rightBarButtonItem=reporteButton;
+    }else{
+        self.reporteButton.enabled=NO;
+    }
+    
+    
 }
+
+
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
