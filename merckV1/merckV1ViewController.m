@@ -62,7 +62,7 @@
         
         if (!unElemento.excluyente && ([unElemento.selecccionesDerecha count] != unElemento.numeroElementos))
         {
-            
+    
             return NO;
         }
         
@@ -77,6 +77,7 @@
 {
     
     if ([self revisarLlenadoBotones]) self.botonContinuar.alpha = 1.0;
+    else self.botonContinuar.alpha = 0.0;
 }
 
 -(IBAction) presionarBotonDerecho:(UIButton *)sender
@@ -89,13 +90,16 @@
     }
     ElementosDerecha *elementoCorrespondiente = [self.posicionesDerechaEquivalentes objectAtIndex:self.indiceDerechoSeleccionado];
     
-    //if (!elementoCorrespondiente.excluyente)
-    //{
+  
         [self desaparecerBoton:(UIButton *)[self.view viewWithTag:indiceDerechoSeleccionado+kIndicesDerecho] enTiempo:0.45];
         [self desaparecerBoton:(UIButton *)[self.view viewWithTag:indiceDerechoSeleccionado+kIndicesMenos] enTiempo:0.45];
+    if (elementoCorrespondiente.excluyente)
+    {
+        [elementoCorrespondiente.selecccionesDerecha removeObjectAtIndex:0];
+    }else{
         [elementoCorrespondiente.selecccionesDerecha removeObjectIdenticalTo:
          [NSNumber numberWithInt:[[self.posicionesDerechaOrden objectAtIndex:self.indiceDerechoSeleccionado] intValue]] ];
-    //}
+    }
 
     
     ElementosDerecha *elementoActual = (ElementosDerecha *)[self.definicionesIzquierda objectAtIndex:self.indiceIzquierdoSeleccionado];
@@ -115,7 +119,7 @@
 
     
     [self habilitarBotonesIzquierda:(UIButton *)[self.view viewWithTag:self.indiceIzquierdoSeleccionado+kIndicesIzquierdo]];
-    
+    [self actualizarBotones:sender];
 }
 
 
@@ -194,6 +198,7 @@
         [self desaparecerBoton:(UIButton *)[self.view viewWithTag:indiceMedioSeleccionado+kIndicesMedio] enTiempo:0.2];
         [self desaparecerBoton:(UIButton *)[self.view viewWithTag:indiceMedioSeleccionado+kIndicesMenos2] enTiempo:0.1];
         [self desaparecerBoton:(UIButton *)[self.view viewWithTag:indiceMedioSeleccionado+kIndicesMas] enTiempo:0.1];
+
     }
     
     // Agregar Numero Seleccion
@@ -301,12 +306,16 @@
     
     int i;
     for(i=100;i<106;i++){
-        int tmp=[(ElementosDerecha *)[self.definicionesIzquierda objectAtIndex:i-kIndicesIzquierdo] selecccionesDerecha].count;
-        if(tmp==0){
+        ElementosDerecha *tmp=(ElementosDerecha *)[self.definicionesIzquierda objectAtIndex:i-kIndicesIzquierdo];
+        if([tmp selecccionesDerecha].count ==0 && tmp.excluyente){
 
             UIButton *temp = (UIButton *)[self.view viewWithTag:i];
             temp.enabled=YES;
+        }else if([tmp selecccionesDerecha].count >= 0 && [tmp selecccionesDerecha].count <tmp.numeroElementos && !tmp.excluyente){
+            UIButton *temp = (UIButton *)[self.view viewWithTag:i];
+            temp.enabled=YES;
         }
+        
     }
     sender.enabled=NO;
     
@@ -351,7 +360,7 @@
                 [self actualizarBotonMedio:(UIButton *)[self.view viewWithTag:kIndicesMedio + 0] ];
         }
     
-    
+    [self habilitarBotonesIzquierda:(UIButton *)[self.view viewWithTag:self.indiceIzquierdoSeleccionado+kIndicesIzquierdo]];
 
 }
 

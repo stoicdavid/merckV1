@@ -552,8 +552,9 @@
     }else{
         image = [image imageRotatedByDegrees:-90];        
     }
-    
-    self.datos = UIImagePNGRepresentation(image);
+    if(self.datos==nil){
+        self.datos = UIImagePNGRepresentation(image);
+    }
     //Fin Captura Tabla
         [self.view viewWithTag:1000].alpha=1.0;
 }
@@ -667,13 +668,13 @@
     
     UIView *vistaAResultados2 = [[[NSBundle mainBundle] loadNibNamed:@"SecondResultadoATerapeutico" owner:self options:nil] lastObject];					
     
-    vistaAResultados2.frame = CGRectMake(kPantallaAncho * 1, 0, kPantallaAncho, kPantallaAlto);
+    vistaAResultados2.frame = CGRectMake(kPantallaAncho * 1, 0, kPantallaAncho, kPantallaAlto-44);
     [self.vistaScroll addSubview:vistaAResultados2];  
  
  
     UIView *vistaAResultados3 = [[[NSBundle mainBundle] loadNibNamed:@"ThirdResultadosATerapeutico" owner:self options:nil] lastObject];					
     
-    vistaAResultados3.frame = CGRectMake(kPantallaAncho * 2, 0, kPantallaAncho, kPantallaAlto);
+    vistaAResultados3.frame = CGRectMake(kPantallaAncho * 2, 0, kPantallaAncho, kPantallaAlto-44);
     [self.vistaScroll addSubview:vistaAResultados3];    
 
     
