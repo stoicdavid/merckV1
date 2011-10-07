@@ -114,6 +114,9 @@
             cell.textLabel.text = @"ASCO GI 2010";
             break;
         case 2:
+            cell.textLabel.text = @"ASCO GI 2011";
+            break;
+        case 3:
             cell.textLabel.text = @"ESMO 2010";
             break;            
         default:
@@ -177,7 +180,7 @@
         case 0:
              detailViewController = [[ZeroIndiceTableView alloc] init];
             
-            [(ZeroIndiceTableView *)detailViewController setNombreDelRecurso: @"Artoriginal"];
+            [(ZeroIndiceTableView *)detailViewController setNombreDelRecurso: @"Art. Original"];
             
             // Pass the selected object to the new view controller.            
             break;
@@ -185,13 +188,23 @@
             
             detailViewController = [[ZeroIndiceTableView alloc] init];
             
-            [(ZeroIndiceTableView *)detailViewController setNombreDelRecurso: @"ASCOGI2010"];
+            [(ZeroIndiceTableView *)detailViewController setNombreDelRecurso: @"ASCO GI 2010"];
             
             // Pass the selected object to the new view controller.
             
             break;
 
         case 2:
+            
+            detailViewController = [[ZeroIndiceTableView alloc] init];
+            
+            [(ZeroIndiceTableView *)detailViewController setNombreDelRecurso: @"ASCO GI 2011"];
+            
+            // Pass the selected object to the new view controller.
+            
+            break;
+
+        case 3:
             
           detailViewController = [[LastLevelTableViewController alloc] init];            
             

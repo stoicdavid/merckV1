@@ -260,7 +260,7 @@
             detailViewController = [[LastLevelTableViewController alloc] init];            
             
             [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
-             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"Artículo Original", @"ArtOriginal_ops",
+             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"Artículo Original", @"Art. Original",
                                                    nil]
               
                                          forKeys:[NSArray arrayWithObjects:@"title", @"archivo",

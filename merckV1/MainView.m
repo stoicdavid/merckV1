@@ -33,22 +33,25 @@
         //Agregar vista inicial
         
         self.backgroundColor=[UIColor whiteColor];
-
+        
         swipes = 0;
         paginas =[[NSMutableArray alloc]initWithCapacity:5];
         NSString *nombreImagen =@"Diapositiva_0";
         
-        UIImageView *imagen = [[UIImageView alloc] initWithImage: [UIImage imageNamed:nombreImagen]];
+        imagen = [[UIImageView alloc] initWithImage: [UIImage imageNamed:nombreImagen]];
         imagen.frame = CGRectMake(0, 0, kPantallaAncho, kPantallaAlto);
         imagen.backgroundColor = [UIColor whiteColor];
         [paginas addObject:imagen];
         [imagen release];
-
+        
+        
         //Agregar animaciones HTML5
+        vista2 = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kPantallaAncho, kPantallaAlto)];
+        //vista3 = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kPantallaAncho, kPantallaAlto)];
         int i;
         for (i=2;i<5;i++)
         {
-
+            
             page *diapo = [[page alloc] init ];
             NSString *nomArchivo = [NSString stringWithFormat:@"%dapag",i];    
             NSString *fileString = [[NSBundle mainBundle] pathForResource: nomArchivo ofType: @"html" ];
@@ -60,7 +63,7 @@
         
         //Agregar reconocedor de gesturas
         
-         UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self  action:@selector(swipeRightAction:)];
+        UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self  action:@selector(swipeRightAction:)];
         swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
         swipeRight.delegate = self;
         [self addGestureRecognizer:swipeRight];
@@ -88,12 +91,24 @@
     //add Function
     if (swipes>=0 ) {
         if (swipes==0) {
-         
             
-            [self produceHTMLForPage:swipes];
+            
+            [self produceHTMLForPage:swipes withRightDirection:YES];
         }else{
-            [self produceHTMLForPage:swipes-1];
+            [self produceHTMLForPage:swipes-1 withRightDirection:YES];
             swipes--;
+//            CATransition *animation = [CATransition animation];
+//            [animation setDuration:0.5];
+//            [animation setType:kCATransitionPush];
+//            UIInterfaceOrientation orienta = [[UIApplication sharedApplication] statusBarOrientation];
+//            if (orienta ==UIInterfaceOrientationLandscapeLeft) {
+//                [animation setSubtype:kCATransitionFromTop];
+//            }else{
+//                [animation setSubtype:kCATransitionFromBottom];
+//            }
+//            [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+//            
+//            [[self layer] addAnimation:animation forKey:nil];
         }
     }
 }
@@ -106,43 +121,80 @@
     //add Function
     if (swipes<=paginas.count-1 ) {
         if (swipes==paginas.count-1) {
-
-     
+            
+            
             //[[paginas objectAtIndex:swipes-1 ] removeFromSuperview];
-           
+            
         }else{
-          
-            [self produceHTMLForPage:swipes+1];
-            //[[paginas objectAtIndex:swipes ] removeFromSuperview];
 
+
+            [self produceHTMLForPage:swipes+1 withRightDirection:NO];
+            //[[paginas objectAtIndex:swipes ] removeFromSuperview];
+            
             swipes++;
+            
+
+            
         }
-   
+        
     }
 }
 
--(void)produceHTMLForPage:(NSInteger)pageNumber{
+-(void)produceHTMLForPage:(NSInteger)pageNumber withRightDirection:(BOOL)direction{
     
     
     if ([[paginas objectAtIndex:pageNumber] isKindOfClass:[page class]])
     {
-
-             
-     UIWebView *dummy = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kPantallaAncho, kPantallaAlto)];
-     [self addSubview: dummy];
-     NSURLRequest *newURLRequest = [[NSURLRequest alloc] initWithURL: [[paginas objectAtIndex:pageNumber] pag] ];
-
-     [dummy loadRequest:newURLRequest];     
-     [dummy release];
- 
         
-       
-//    }else if ([[paginas objectAtIndex:pageNumber] isKindOfClass:[UIImageView class]]){
-      }else {
+//        imagen.hidden=YES;
+//        vista2=(UIWebView *)self;
+//        vista2.hidden=YES;
+        [vista3 removeFromSuperview];
+        [[paginas objectAtIndex:paginas.count-1] removeFromSuperview];
+        [[paginas objectAtIndex:0] removeFromSuperview];
+        vista3 = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kPantallaAncho, kPantallaAlto)];
+        vista3.backgroundColor = [UIColor whiteColor];
+        [self addSubview:vista3];
+        vista3.hidden=NO;
+        NSURLRequest *newURLRequest = [[NSURLRequest alloc] initWithURL: [[paginas objectAtIndex:pageNumber] pag] ];
+        
+        [vista3 loadRequest:newURLRequest];     
+        //[dummy release];
+        
+        
+        
+        
 
-               [self addSubview:[paginas objectAtIndex:pageNumber]];
+        
+        
+        
+        
+        //    }else if ([[paginas objectAtIndex:pageNumber] isKindOfClass:[UIImageView class]]){
+    }else {
 
+        [self addSubview:[paginas objectAtIndex:pageNumber]];
+        //imagen.hidden=NO;
     }
+    CATransition *animation = [CATransition animation];
+    [animation setDuration:0.4];
+    [animation setType:kCATransitionPush];
+    UIInterfaceOrientation orienta = [[UIApplication sharedApplication] statusBarOrientation];
+    if(!direction){
+        if (orienta ==UIInterfaceOrientationLandscapeLeft)
+            [animation setSubtype:kCATransitionFromBottom];
+        else
+            [animation setSubtype:kCATransitionFromTop];
+    }else{
+        if (orienta ==UIInterfaceOrientationLandscapeLeft) 
+            [animation setSubtype:kCATransitionFromTop];
+        else
+            [animation setSubtype:kCATransitionFromBottom];            
+    }
+    
+    
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
+    
+    [[self layer] addAnimation:animation forKey:nil];
 }
 
 
@@ -150,14 +202,18 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    [self addSubview:[paginas objectAtIndex:swipes]];
-
+    if (swipes==0) {
+        [self addSubview:imagen];
+    }else{
+        [self addSubview:vista3];
+    }
 }
 
 -(void)dealloc{
     [paginas dealloc];
-    
-       
+    [imagen dealloc];
+    [vista2 dealloc];
+    [vista3 dealloc];    
     [super dealloc];
 }
 

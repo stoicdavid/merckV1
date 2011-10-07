@@ -209,7 +209,7 @@
                                                   nil] ]];
 
             [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
-             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"Stathopoulos", @"Stathopoulos",
+             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"Stathopoulos", @"Statophoulus",
                                                    nil]
               
                                          forKeys:[NSArray arrayWithObjects:@"title", @"archivo",

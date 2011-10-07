@@ -23,6 +23,6 @@
 @property (nonatomic, retain) NSString *nombreDelRecurso;
 @property (nonatomic, retain) NSMutableArray *idiomasDisponibles;
 - (void)setupDocumentControllerWithURL:(NSURL *)url;
-- (void)setNombreDelRecurso:(NSString *)nombreDelRecurso;
+//- (void)setNombreDelRecurso:(NSString *)nombreDelRecurso;
 
 @end
