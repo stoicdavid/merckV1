@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "page.h"
 #import <QuartzCore/QuartzCore.h>
-#import "ResultadosATerapeutico.h"
-#import "ElementosDerecha.h"
-#import "merckV1ViewController.h"
 
 @interface MainView : UIView <UIGestureRecognizerDelegate>{
     NSMutableArray *paginas;			//array of pages

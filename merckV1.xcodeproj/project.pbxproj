@@ -63,6 +63,10 @@
 		3AF88BE113F8A036007D8367 /* D_11_0_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF88BCF13F8A036007D8367 /* D_11_0_h.png */; };
 		3AF88BE313F8AC86007D8367 /* ThirdResultadosATerapeutico.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF88BE213F8AC27007D8367 /* ThirdResultadosATerapeutico.xib */; };
 		3AF88C2713FA0E3E007D8367 /* BotonRojo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF88C2613FA0E3D007D8367 /* BotonRojo.png */; };
+		AA10652D144B8CAA005A05E0 /* 2apag.html in Resources */ = {isa = PBXBuildFile; fileRef = AA10652C144B8CAA005A05E0 /* 2apag.html */; };
+		AA106531144B93D1005A05E0 /* xlink in Resources */ = {isa = PBXBuildFile; fileRef = AA106530144B93D1005A05E0 /* xlink */; };
+		AA106532144B9418005A05E0 /* runtime.js in Resources */ = {isa = PBXBuildFile; fileRef = AA10652E144B8D2C005A05E0 /* runtime.js */; };
+		AA106534144B948D005A05E0 /* 4apag.html in Resources */ = {isa = PBXBuildFile; fileRef = AA106533144B948D005A05E0 /* 4apag.html */; };
 		AA1C6D8D144A6B6300712D5D /* Diapositiva_0.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6D8C144A6B6300712D5D /* Diapositiva_0.png */; };
 		AA1C6D8F144A6EFC00712D5D /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6D8E144A6EFC00712D5D /* Default-Landscape~ipad.png */; };
 		AA1C6D98144AA99200712D5D /* notas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6D94144AA99200712D5D /* notas.jpg */; };
@@ -70,7 +74,6 @@
 		AA1C6D9A144AA99200712D5D /* observaciones.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6D96144AA99200712D5D /* observaciones.jpg */; };
 		AA1C6D9B144AA99200712D5D /* plan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6D97144AA99200712D5D /* plan.jpg */; };
 		AA1C6D9D144ABF7F00712D5D /* texta.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6D9C144ABF7F00712D5D /* texta.png */; };
-		AA1C6D9F144AC52400712D5D /* 2apag.html in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6D9E144AC52400712D5D /* 2apag.html */; };
 		AA1C6DA9144AC8AF00712D5D /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6DA0144AC8AF00712D5D /* 0.png */; };
 		AA1C6DAA144AC8AF00712D5D /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6DA1144AC8AF00712D5D /* 1.png */; };
 		AA1C6DAB144AC8AF00712D5D /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1C6DA2144AC8AF00712D5D /* 2.png */; };
@@ -102,7 +105,6 @@
 		AA203F7E141F0AF2007E5372 /* R-Resumen de Resultados.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA203F7C141F0AF2007E5372 /* R-Resumen de Resultados.pdf */; };
 		AA203F7F141F0AF2007E5372 /* TP Tratamiento Personalizado.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA203F7D141F0AF2007E5372 /* TP Tratamiento Personalizado.pdf */; };
 		AA203F81141F0FF1007E5372 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA203F80141F0FF1007E5372 /* QuickLook.framework */; };
-		AA270005141C60F8001AEF05 /* runtime.js in Resources */ = {isa = PBXBuildFile; fileRef = AA2166EF141B14B700360C41 /* runtime.js */; };
 		AA3CD0FF141E4E7A00EF2144 /* Booth_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA3CD0CA141E4E7A00EF2144 /* Booth_en.pdf */; };
 		AA3CD100141E4E7A00EF2144 /* Booth_es.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA3CD0CB141E4E7A00EF2144 /* Booth_es.pdf */; };
 		AA3CD101141E4E7A00EF2144 /* Hurwitz_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA3CD0CC141E4E7A00EF2144 /* Hurwitz_en.pdf */; };
@@ -143,7 +145,6 @@
 		AA3CD124141E4E7A00EF2144 /* ASCO GI 2011_3_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA3CD0F7141E4E7A00EF2144 /* ASCO GI 2011_3_en.pdf */; };
 		AA3CD125141E4E7A00EF2144 /* ESMO 2010_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA3CD0F8141E4E7A00EF2144 /* ESMO 2010_en.pdf */; };
 		AA3CD126141E4E7A00EF2144 /* ESMO 2010_es.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA3CD0F9141E4E7A00EF2144 /* ESMO 2010_es.pdf */; };
-		AA3CD127141E4E7A00EF2144 /* Amgen_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA3CD0FB141E4E7A00EF2144 /* Amgen_en.pdf */; };
 		AA3CD128141E4E7A00EF2144 /* Hecht_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA3CD0FC141E4E7A00EF2144 /* Hecht_en.pdf */; };
 		AA3CD129141E4E7A00EF2144 /* Hecht_es.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA3CD0FD141E4E7A00EF2144 /* Hecht_es.pdf */; };
 		AA3CD12A141E4E7A00EF2144 /* PRIME_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA3CD0FE141E4E7A00EF2144 /* PRIME_en.pdf */; };
@@ -205,9 +206,12 @@
 		AACF2D0714469E010004F20E /* verde_b.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF2CF614469E010004F20E /* verde_b.png */; };
 		AACF2D0814469E010004F20E /* verde.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF2CF714469E010004F20E /* verde.png */; };
 		AAD6B691143C27220020FB98 /* 3apag.html in Resources */ = {isa = PBXBuildFile; fileRef = AAD6B68E143C27220020FB98 /* 3apag.html */; };
-		AAD6B692143C27220020FB98 /* 4apag.html in Resources */ = {isa = PBXBuildFile; fileRef = AAD6B68F143C27220020FB98 /* 4apag.html */; };
 		AAD7EA711419DE7D00C180F6 /* merckV1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD7EA701419DE7D00C180F6 /* merckV1ViewController.xib */; };
 		AAD933A61446B76000485E94 /* AddData.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD933A51446B76000485E94 /* AddData.xib */; };
+		AAD97B47144BA43E00782913 /* ASCO GI 2011_3_CRYS_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD97B46144BA43E00782913 /* ASCO GI 2011_3_CRYS_en.pdf */; };
+		AAD97B4B144BA50A00782913 /* Folprecht_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD97B49144BA50A00782913 /* Folprecht_en.pdf */; };
+		AAD97B4C144BA50A00782913 /* Folprecht_es.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD97B4A144BA50A00782913 /* Folprecht_es.pdf */; };
+		AAD97B4E144BA5C100782913 /* Hurwitz 2009_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD97B4D144BA5C100782913 /* Hurwitz 2009_en.pdf */; };
 		AADCA709141D2CF7006F58C2 /* abordaje_01.png in Resources */ = {isa = PBXBuildFile; fileRef = AADCA701141D2CF7006F58C2 /* abordaje_01.png */; };
 		AADCA70A141D2CF7006F58C2 /* abordaje_05.png in Resources */ = {isa = PBXBuildFile; fileRef = AADCA702141D2CF7006F58C2 /* abordaje_05.png */; };
 		AADCA70B141D2CF7006F58C2 /* abordaje_07.png in Resources */ = {isa = PBXBuildFile; fileRef = AADCA703141D2CF7006F58C2 /* abordaje_07.png */; };
@@ -379,6 +383,10 @@
 		3AF88BCF13F8A036007D8367 /* D_11_0_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = D_11_0_h.png; sourceTree = "<group>"; };
 		3AF88BE213F8AC27007D8367 /* ThirdResultadosATerapeutico.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdResultadosATerapeutico.xib; sourceTree = "<group>"; };
 		3AF88C2613FA0E3D007D8367 /* BotonRojo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BotonRojo.png; sourceTree = "<group>"; };
+		AA10652C144B8CAA005A05E0 /* 2apag.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2apag.html; sourceTree = "<group>"; };
+		AA10652E144B8D2C005A05E0 /* runtime.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = runtime.js; sourceTree = "<group>"; };
+		AA106530144B93D1005A05E0 /* xlink */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xlink; sourceTree = "<group>"; };
+		AA106533144B948D005A05E0 /* 4apag.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 4apag.html; sourceTree = "<group>"; };
 		AA1C6D8C144A6B6300712D5D /* Diapositiva_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Diapositiva_0.png; sourceTree = "<group>"; };
 		AA1C6D8E144A6EFC00712D5D /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		AA1C6D94144AA99200712D5D /* notas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = notas.jpg; sourceTree = "<group>"; };
@@ -386,7 +394,6 @@
 		AA1C6D96144AA99200712D5D /* observaciones.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = observaciones.jpg; sourceTree = "<group>"; };
 		AA1C6D97144AA99200712D5D /* plan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plan.jpg; sourceTree = "<group>"; };
 		AA1C6D9C144ABF7F00712D5D /* texta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texta.png; sourceTree = "<group>"; };
-		AA1C6D9E144AC52400712D5D /* 2apag.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 2apag.html; sourceTree = "<group>"; };
 		AA1C6DA0144AC8AF00712D5D /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		AA1C6DA1144AC8AF00712D5D /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		AA1C6DA2144AC8AF00712D5D /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -418,7 +425,6 @@
 		AA203F7C141F0AF2007E5372 /* R-Resumen de Resultados.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "R-Resumen de Resultados.pdf"; sourceTree = "<group>"; };
 		AA203F7D141F0AF2007E5372 /* TP Tratamiento Personalizado.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TP Tratamiento Personalizado.pdf"; sourceTree = "<group>"; };
 		AA203F80141F0FF1007E5372 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
-		AA2166EF141B14B700360C41 /* runtime.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = runtime.js; sourceTree = "<group>"; };
 		AA3CD0CA141E4E7A00EF2144 /* Booth_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Booth_en.pdf; sourceTree = "<group>"; };
 		AA3CD0CB141E4E7A00EF2144 /* Booth_es.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Booth_es.pdf; sourceTree = "<group>"; };
 		AA3CD0CC141E4E7A00EF2144 /* Hurwitz_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Hurwitz_en.pdf; sourceTree = "<group>"; };
@@ -459,7 +465,6 @@
 		AA3CD0F7141E4E7A00EF2144 /* ASCO GI 2011_3_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ASCO GI 2011_3_en.pdf"; sourceTree = "<group>"; };
 		AA3CD0F8141E4E7A00EF2144 /* ESMO 2010_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ESMO 2010_en.pdf"; sourceTree = "<group>"; };
 		AA3CD0F9141E4E7A00EF2144 /* ESMO 2010_es.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ESMO 2010_es.pdf"; sourceTree = "<group>"; };
-		AA3CD0FB141E4E7A00EF2144 /* Amgen_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Amgen_en.pdf; sourceTree = "<group>"; };
 		AA3CD0FC141E4E7A00EF2144 /* Hecht_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Hecht_en.pdf; sourceTree = "<group>"; };
 		AA3CD0FD141E4E7A00EF2144 /* Hecht_es.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Hecht_es.pdf; sourceTree = "<group>"; };
 		AA3CD0FE141E4E7A00EF2144 /* PRIME_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PRIME_en.pdf; sourceTree = "<group>"; };
@@ -525,9 +530,12 @@
 		AACF2CF614469E010004F20E /* verde_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verde_b.png; sourceTree = "<group>"; };
 		AACF2CF714469E010004F20E /* verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verde.png; sourceTree = "<group>"; };
 		AAD6B68E143C27220020FB98 /* 3apag.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 3apag.html; sourceTree = "<group>"; };
-		AAD6B68F143C27220020FB98 /* 4apag.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 4apag.html; sourceTree = "<group>"; };
 		AAD7EA701419DE7D00C180F6 /* merckV1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = merckV1ViewController.xib; sourceTree = "<group>"; };
 		AAD933A51446B76000485E94 /* AddData.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddData.xib; sourceTree = "<group>"; };
+		AAD97B46144BA43E00782913 /* ASCO GI 2011_3_CRYS_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ASCO GI 2011_3_CRYS_en.pdf"; sourceTree = "<group>"; };
+		AAD97B49144BA50A00782913 /* Folprecht_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Folprecht_en.pdf; sourceTree = "<group>"; };
+		AAD97B4A144BA50A00782913 /* Folprecht_es.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Folprecht_es.pdf; sourceTree = "<group>"; };
+		AAD97B4D144BA5C100782913 /* Hurwitz 2009_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Hurwitz 2009_en.pdf"; sourceTree = "<group>"; };
 		AADCA701141D2CF7006F58C2 /* abordaje_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abordaje_01.png; sourceTree = "<group>"; };
 		AADCA702141D2CF7006F58C2 /* abordaje_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abordaje_05.png; sourceTree = "<group>"; };
 		AADCA703141D2CF7006F58C2 /* abordaje_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abordaje_07.png; sourceTree = "<group>"; };
@@ -986,6 +994,7 @@
 				AA3CD0CB141E4E7A00EF2144 /* Booth_es.pdf */,
 				AA3CD0CC141E4E7A00EF2144 /* Hurwitz_en.pdf */,
 				AA3CD0CD141E4E7A00EF2144 /* Hurwitz_es.pdf */,
+				AAD97B4D144BA5C100782913 /* Hurwitz 2009_en.pdf */,
 				AA3CD0CE141E4E7A00EF2144 /* Saltz_en.pdf */,
 				AA3CD0CF141E4E7A00EF2144 /* Saltz_es.pdf */,
 				AA3CD0D0141E4E7A00EF2144 /* Statophoulus_en.pdf */,
@@ -1085,8 +1094,11 @@
 				AA3CD0F5141E4E7A00EF2144 /* ASCO GI 2010_3_en.pdf */,
 				AA3CD0F6141E4E7A00EF2144 /* ASCO GI 2010_3_es.pdf */,
 				AA3CD0F7141E4E7A00EF2144 /* ASCO GI 2011_3_en.pdf */,
+				AAD97B46144BA43E00782913 /* ASCO GI 2011_3_CRYS_en.pdf */,
 				AA3CD0F8141E4E7A00EF2144 /* ESMO 2010_en.pdf */,
 				AA3CD0F9141E4E7A00EF2144 /* ESMO 2010_es.pdf */,
+				AAD97B49144BA50A00782913 /* Folprecht_en.pdf */,
+				AAD97B4A144BA50A00782913 /* Folprecht_es.pdf */,
 			);
 			path = OPUS;
 			sourceTree = "<group>";
@@ -1094,7 +1106,6 @@
 		AA3CD0FA141E4E7A00EF2144 /* Panitumumab */ = {
 			isa = PBXGroup;
 			children = (
-				AA3CD0FB141E4E7A00EF2144 /* Amgen_en.pdf */,
 				AA3CD0FC141E4E7A00EF2144 /* Hecht_en.pdf */,
 				AA3CD0FD141E4E7A00EF2144 /* Hecht_es.pdf */,
 				AA3CD0FE141E4E7A00EF2144 /* PRIME_en.pdf */,
@@ -1113,10 +1124,11 @@
 		AAA5102C141861750076CE19 /* html */ = {
 			isa = PBXGroup;
 			children = (
-				AA1C6D9E144AC52400712D5D /* 2apag.html */,
+				AA10652C144B8CAA005A05E0 /* 2apag.html */,
 				AAD6B68E143C27220020FB98 /* 3apag.html */,
-				AAD6B68F143C27220020FB98 /* 4apag.html */,
-				AA2166EF141B14B700360C41 /* runtime.js */,
+				AA106533144B948D005A05E0 /* 4apag.html */,
+				AA10652E144B8D2C005A05E0 /* runtime.js */,
+				AA106530144B93D1005A05E0 /* xlink */,
 			);
 			name = html;
 			sourceTree = "<group>";
@@ -1328,7 +1340,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA270005141C60F8001AEF05 /* runtime.js in Resources */,
 				3A31BFBF13F0CC3C0016DE97 /* InfoPlist.strings in Resources */,
 				3A31BFC813F0CC3C0016DE97 /* MainWindow.xib in Resources */,
 				3ADDB18413F2428C00595ACA /* ATerapeuticoView.xib in Resources */,
@@ -1498,6 +1509,7 @@
 				AA3CD105141E4E7A00EF2144 /* Statophoulus_en.pdf in Resources */,
 				AA3CD106141E4E7A00EF2144 /* Statophoulus_es.pdf in Resources */,
 				AA3CD107141E4E7A00EF2144 /* Tol_en.pdf in Resources */,
+				AA106532144B9418005A05E0 /* runtime.js in Resources */,
 				AA3CD108141E4E7A00EF2144 /* Tol_es.pdf in Resources */,
 				AA3CD109141E4E7A00EF2144 /* Data on file_en.pdf in Resources */,
 				AA3CD10A141E4E7A00EF2144 /* Data on file_es.pdf in Resources */,
@@ -1529,7 +1541,6 @@
 				AA3CD124141E4E7A00EF2144 /* ASCO GI 2011_3_en.pdf in Resources */,
 				AA3CD125141E4E7A00EF2144 /* ESMO 2010_en.pdf in Resources */,
 				AA3CD126141E4E7A00EF2144 /* ESMO 2010_es.pdf in Resources */,
-				AA3CD127141E4E7A00EF2144 /* Amgen_en.pdf in Resources */,
 				AA3CD128141E4E7A00EF2144 /* Hecht_en.pdf in Resources */,
 				AA3CD129141E4E7A00EF2144 /* Hecht_es.pdf in Resources */,
 				AA3CD12A141E4E7A00EF2144 /* PRIME_en.pdf in Resources */,
@@ -1539,7 +1550,6 @@
 				AAF0BF0D1420828C00038513 /* cont.png in Resources */,
 				AAF0BF0E1420828C00038513 /* cont_h.png in Resources */,
 				AAD6B691143C27220020FB98 /* 3apag.html in Resources */,
-				AAD6B692143C27220020FB98 /* 4apag.html in Resources */,
 				AA4D4E02143D797200641085 /* Matriz.png in Resources */,
 				AA4D4E05143D798E00641085 /* tabal_10.png in Resources */,
 				AA4D4E06143D798E00641085 /* tabal_13.png in Resources */,
@@ -1574,7 +1584,6 @@
 				AA1C6D9A144AA99200712D5D /* observaciones.jpg in Resources */,
 				AA1C6D9B144AA99200712D5D /* plan.jpg in Resources */,
 				AA1C6D9D144ABF7F00712D5D /* texta.png in Resources */,
-				AA1C6D9F144AC52400712D5D /* 2apag.html in Resources */,
 				AA1C6DA9144AC8AF00712D5D /* 0.png in Resources */,
 				AA1C6DAA144AC8AF00712D5D /* 1.png in Resources */,
 				AA1C6DAB144AC8AF00712D5D /* 2.png in Resources */,
@@ -1603,6 +1612,13 @@
 				AA1C6DD4144AC9AE00712D5D /* 019_2.png in Resources */,
 				AA1C6DD5144AC9AE00712D5D /* 020_2.png in Resources */,
 				AA1C6DD8144B427100712D5D /* pagina2.png in Resources */,
+				AA10652D144B8CAA005A05E0 /* 2apag.html in Resources */,
+				AA106531144B93D1005A05E0 /* xlink in Resources */,
+				AA106534144B948D005A05E0 /* 4apag.html in Resources */,
+				AAD97B47144BA43E00782913 /* ASCO GI 2011_3_CRYS_en.pdf in Resources */,
+				AAD97B4B144BA50A00782913 /* Folprecht_en.pdf in Resources */,
+				AAD97B4C144BA50A00782913 /* Folprecht_es.pdf in Resources */,
+				AAD97B4E144BA5C100782913 /* Hurwitz 2009_en.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1613,6 +1629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA818F35141D5F94000D537F /* MainView.m in Sources */,
 				AA9F66D6142061DB00739EDA /* ErbituxTableViewController.m in Sources */,
 				3A31BFC213F0CC3C0016DE97 /* main.m in Sources */,
 				3A31BFC513F0CC3C0016DE97 /* merckV1AppDelegate.m in Sources */,
@@ -1625,7 +1642,6 @@
 				3A2E0D2513FCA51800A69C2C /* ZeroIndiceTableView.m in Sources */,
 				3A2E0D8B13FCB35D00A69C2C /* LastLevelTableViewController.m in Sources */,
 				3A8BC0A4140377E200D39ECF /* CrystalTableViewController.m in Sources */,
-				AA818F35141D5F94000D537F /* MainView.m in Sources */,
 				AA818F38141D639C000D537F /* page.m in Sources */,
 				AACF2CDC14468C480004F20E /* AddData.m in Sources */,
 			);
@@ -1657,19 +1673,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Enrique Culebro Karam (FJZ9Y5B6E9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "";
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				PROVISIONING_PROFILE = "579CB7A0-5F5D-413B-875E-3AAAF7278B8B";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -1680,14 +1702,20 @@
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Enrique Culebro Karam (FJZ9Y5B6E9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				PROVISIONING_PROFILE = "579CB7A0-5F5D-413B-875E-3AAAF7278B8B";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
@@ -1743,15 +1771,21 @@
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Enrique Culebro Karam (FJZ9Y5B6E9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				PROVISIONING_PROFILE = "DF45EF83-A6D4-408C-9E2A-6433D324B301";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = "Ad Hoc";

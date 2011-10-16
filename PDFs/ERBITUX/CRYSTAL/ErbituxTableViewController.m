@@ -281,7 +281,22 @@
                                                   nil] ]];
             
             [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
+             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"ASCO GI 2011 CRYSTAL & OPUS", @"ASCO GI 2011_3_CRYS",
+                                                   nil]
+              
+                                         forKeys:[NSArray arrayWithObjects:@"title", @"archivo",
+                                                  nil] ]];            
+            
+            
+            [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
              [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"ESMO 2010", @"ESMO 2010",
+                                                   nil] 
+              
+                                         forKeys:[NSArray arrayWithObjects:@"title", @"archivo",
+                                                  nil] ]];
+            
+            [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
+             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"FOLPRECHT", @"Folprecht",
                                                    nil] 
               
                                          forKeys:[NSArray arrayWithObjects:@"title", @"archivo",

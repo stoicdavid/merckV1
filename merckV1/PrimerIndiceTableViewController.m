@@ -200,6 +200,13 @@
               
                                          forKeys:[NSArray arrayWithObjects:@"title", @"archivo",
                                                   nil] ]];
+            
+            [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
+             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"Hurwitz 2009", @"Hurwitz 2009",
+                                                   nil]
+              
+                                         forKeys:[NSArray arrayWithObjects:@"title", @"archivo",
+                                                  nil] ]];
 
             [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
              [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"Saltz", @"Saltz",
@@ -234,12 +241,6 @@
                                          forKeys:[NSArray arrayWithObjects:@"title", @"archivo",
                                                   nil] ]];
             
-            [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
-             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"Amgen", @"Amgen",
-                                                   nil]
-              
-                                         forKeys:[NSArray arrayWithObjects:@"title", @"archivo",
-                                                  nil] ]];
             
             [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
              [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"PRIME", @"PRIME",

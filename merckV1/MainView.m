@@ -7,7 +7,11 @@
 //
 
 #import "MainView.h"
-
+#import "page.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ResultadosATerapeutico.h"
+#import "ElementosDerecha.h"
+#import "merckV1ViewController.h"
 
 
 #define kPantallaAncho 1024
@@ -18,6 +22,7 @@
 
 
 @implementation MainView
+
 @synthesize paginas,swipes;
 @synthesize animationLayer = _animationLayer;
 @synthesize pathLayer = _pathLayer;
@@ -30,13 +35,13 @@
         self.pathLayer = nil;
     }
     
-    CGRect pathRect = CGRectInset(self.animationLayer.bounds, 100.0f, 100.0f);
-    CGPoint inicial = CGPointMake(717.49f, 228.31f);
-    CGPoint topLeft		= CGPointMake(CGRectGetMinX(pathRect), CGRectGetMinY(pathRect) + CGRectGetHeight(pathRect) * 2.0f/3.0f);
-    CGPoint bottomLeft 	= CGPointMake(CGRectGetMinX(pathRect), CGRectGetMinY(pathRect));
+    CGRect pathRect = CGRectInset(self.animationLayer.bounds, 0.0, 0.0);
+    CGPoint inicial = CGPointMake(717.49f, 210.0f);
+    CGPoint topLeft		= CGPointMake(668,210);
+    CGPoint bottomLeft 	= CGPointMake(668,-220);
 
-    CGPoint bottomRight = CGPointMake(CGRectGetMaxX(pathRect), CGRectGetMinY(pathRect));
-    CGPoint topRight	= CGPointMake(CGRectGetMaxX(pathRect), CGRectGetMinY(pathRect) + CGRectGetHeight(pathRect) * 2.0f/3.0f);
+    CGPoint bottomRight = CGPointMake(761,-220);
+    CGPoint topRight	= CGPointMake(761,210);
     
     
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -55,12 +60,14 @@
     pathLayer.path = path.CGPath;
     pathLayer.strokeColor = [[UIColor orangeColor] CGColor];
     pathLayer.fillColor = nil;
-    pathLayer.lineWidth = 10.0f;
+    pathLayer.lineWidth = 5.0f;
     pathLayer.lineJoin = kCALineJoinBevel;
     
     [self.animationLayer addSublayer:pathLayer];
+    //[vista.layer addSublayer:pathLayer];
     
     self.pathLayer = pathLayer;
+        [self.layer addSublayer:self.animationLayer];
 }
 
 
@@ -69,10 +76,11 @@
     [self.pathLayer removeAllAnimations];
     
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnimation.duration = 10.0;
+    pathAnimation.duration = 1.5;
     pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
     pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
     [self.pathLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
+
     
     
 }  
@@ -83,11 +91,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         //717.49f, 228.31f
-        self.animationLayer = [CALayer layer];
-        self.animationLayer.frame = CGRectMake(668.0f, 220.0f, 
-                                               93.0f, 
-                                               427.0f);
-        [self.layer addSublayer:self.animationLayer];
+        
+        
         
         
         
@@ -117,7 +122,7 @@
         int i;
         for (i=2;i<5;i++)
         {
-            
+            if(i!=3){
             page *diapo = [[page alloc] init ];
             NSString *nomArchivo = [NSString stringWithFormat:@"%dapag",i];    
             NSString *fileString = [[NSBundle mainBundle] pathForResource: nomArchivo ofType: @"html" ];
@@ -125,13 +130,29 @@
             diapo.pag = newURL;
             [paginas addObject:diapo];
             [diapo release];
+            }else{
+                NSString *pag2=@"pagina2";
+                UIImageView *anima2 = [[UIImageView alloc] initWithImage: [UIImage imageNamed:pag2]];
+                //UIImageView *pagina1 = [[UIImageView alloc] init];
+                anima2.frame = CGRectMake(0, 0, kPantallaAncho, kPantallaAlto);
+                //pagina1.backgroundColor = [UIColor orangeColor];
+                //pagina1.alpha=0.5;
+                
+                [paginas addObject:anima2];
+                self.animationLayer = [CALayer layer];
+                self.animationLayer.frame = CGRectMake(0.0, 0.0, 
+                                                       93.0f, 
+                                                       427.0f);
+            }
+            
+            
         }        
-        NSString *pag2=@"pagina2";
-        UIImageView *pagina1 = [[UIImageView alloc] initWithImage: [UIImage imageNamed:pag2]];
-        pagina1.frame = CGRectMake(0, 0, kPantallaAncho, kPantallaAlto);
-        pagina1.backgroundColor = [UIColor whiteColor];
-        [paginas addObject:pagina1];
+       
         
+        //[self setupDrawingLayer];
+        //[self startAnimation];
+        
+
         
         //Agregar reconocedor de gesturas
         
@@ -167,20 +188,10 @@
             
             [self produceHTMLForPage:swipes withRightDirection:YES];
         }else{
+
             [self produceHTMLForPage:swipes-1 withRightDirection:YES];
-            swipes--;
-//            CATransition *animation = [CATransition animation];
-//            [animation setDuration:0.5];
-//            [animation setType:kCATransitionPush];
-//            UIInterfaceOrientation orienta = [[UIApplication sharedApplication] statusBarOrientation];
-//            if (orienta ==UIInterfaceOrientationLandscapeLeft) {
-//                [animation setSubtype:kCATransitionFromTop];
-//            }else{
-//                [animation setSubtype:kCATransitionFromBottom];
-//            }
-//            [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-//            
-//            [[self layer] addAnimation:animation forKey:nil];
+                        swipes--;
+
         }
     }
 }
@@ -201,7 +212,7 @@
 
 
             [self produceHTMLForPage:swipes+1 withRightDirection:NO];
-            //[[paginas objectAtIndex:swipes ] removeFromSuperview];
+            
             
             swipes++;
             
@@ -218,39 +229,26 @@
     if ([[paginas objectAtIndex:pageNumber] isKindOfClass:[page class]])
     {
         
-//        imagen.hidden=YES;
-//        vista2=(UIWebView *)self;
-//        vista2.hidden=YES;
         [vista3 removeFromSuperview];
         [[paginas objectAtIndex:paginas.count-1] removeFromSuperview];
         [[paginas objectAtIndex:0] removeFromSuperview];
+        [[paginas objectAtIndex:1] removeFromSuperview];
         vista3 = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kPantallaAncho, kPantallaAlto)];
         vista3.backgroundColor = [UIColor whiteColor];
         [self addSubview:vista3];
         vista3.hidden=NO;
         NSURLRequest *newURLRequest = [[NSURLRequest alloc] initWithURL: [[paginas objectAtIndex:pageNumber] pag] ];
-        
         [vista3 loadRequest:newURLRequest];     
-        //[dummy release];
-        
-        
-        
-        
-
-        
-        
-        
-        
-        //    }else if ([[paginas objectAtIndex:pageNumber] isKindOfClass:[UIImageView class]]){
     }else {
-
-        [self addSubview:[paginas objectAtIndex:pageNumber]];
-        //imagen.hidden=NO;
-        if (swipes==3) {
-            
-
-        [self setupDrawingLayer];
-        [self startAnimation];
+            [vista3 removeFromSuperview];
+            [[paginas objectAtIndex:paginas.count-1] removeFromSuperview];
+            [[paginas objectAtIndex:0] removeFromSuperview];
+            [[paginas objectAtIndex:1] removeFromSuperview];
+            [self addSubview:[paginas objectAtIndex:pageNumber]];
+        if (pageNumber ==3 ) {
+            [self.layer addSublayer:self.animationLayer];
+            [self setupDrawingLayer];
+            [self startAnimation];
         }            
     }
     CATransition *animation = [CATransition animation];
@@ -269,10 +267,9 @@
             [animation setSubtype:kCATransitionFromBottom];            
     }
     
-    
-    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
-    
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];    
     [[self layer] addAnimation:animation forKey:nil];
+    
 
 }
 

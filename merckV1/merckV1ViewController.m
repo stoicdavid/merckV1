@@ -433,91 +433,19 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    [super viewDidLoad];   
     
-    
-
-
-    
-    /*
-    
-    // Ajustar Tamaño Scroll
-    //self.scrollParaSlides.contentSize = CGSizeMake(kPantallaAncho * kNumeroDiapositivas, kPantallaAlto);
-
-    NSLog(@"Tamaños: Width: %f Height: %f", self.view.frame.size.width, self.view.frame.size.height);
-    
-    // Crear Imagenes de Diapositivas.
-    
-    NSString *nombreImagen =@"Diapositiva_0";
-    
-    UIImageView *imagen = [[UIImageView alloc] initWithImage: [UIImage imageNamed:nombreImagen]];
-    imagen.frame = CGRectMake(0, 0, kPantallaAncho, kPantallaAlto);
-    [self.scrollParaSlides addSubview:imagen];
-    [imagen release];
-    
-        // Crear HTML5
-    int i;
-    for (i=2;i<5;i++)
-    {
-        NSString *nomArchivo = [NSString stringWithFormat:@"%dapag",i];    
-        NSString *fileString = [[NSBundle mainBundle] pathForResource: nomArchivo ofType: @"html" ];
-    
-        NSURL *newURL = [[NSURL alloc] initFileURLWithPath: fileString];
-        //NSString *html = [NSString stringWithContentsOfFile:fileString 
-        //                                           encoding:NSUTF8StringEncoding 
-         //                                             error:nil];
-        NSURLRequest *newURLRequest = [[NSURLRequest alloc] initWithURL: newURL];
-        //NSString *path = [[NSBundle mainBundle] bundlePath];
-        //NSURL *baseURL = [NSURL fileURLWithPath:path];
-        UIWebView *dummy = [[UIWebView alloc] initWithFrame:CGRectMake(kPantallaAncho*(i-1), 0, kPantallaAncho, kPantallaAlto)];    
-//        slide.frame = CGRectMake(kPantallaAncho*(i-1), 0, kPantallaAncho-255, kPantallaAlto*2);
-//        [slide loadRequest: newURLRequest];    
-//        slide.userInteractionEnabled = NO;
-        
-        [self.scrollParaSlides addSubview:dummy];
-        //[dummy loadHTMLString:html 
-          //            baseURL:[[NSURL alloc] initFileURLWithPath: fileString]];
-        
-        
-        [dummy loadRequest:newURLRequest];   
-        [[[dummy subviews] lastObject] setScrollEnabled:NO];
-        [dummy release];
-    }
-    
-    
-//    int i;
-//    for (i=0; i<kNumeroDiapositivas-1; i++)
-//    {
-//        NSString *nombreImagen = [NSString stringWithFormat:@"Diapositiva_%d", i];
-//        
-//        UIImageView *imagen = [[UIImageView alloc] initWithImage: [UIImage imageNamed:nombreImagen]];
-//        imagen.frame = CGRectMake(kPantallaAncho * i, 0, kPantallaAncho, kPantallaAlto);
-//        //[self.scrollParaSlides addSubview:imagen];
-//        [imagen release];
-//
-//        
-//    }
-
-    // Agregar Diapositiva con el ultimo View: Tratamiento Diagnostico
-
-
-    UIView *vistaADiagnostico = [[[NSBundle mainBundle] loadNibNamed:@"ATerapeuticoView" owner:self options:nil] lastObject];					
-    
-    vistaADiagnostico.frame = CGRectMake(kPantallaAncho * 4, 0, kPantallaAncho, kPantallaAlto);
-    [self.scrollParaSlides addSubview:vistaADiagnostico];
-    */
      UIView *vistaADiagnostico = [[[NSBundle mainBundle] loadNibNamed:@"ATerapeuticoView" owner:self options:nil] lastObject];					
      
      vistaADiagnostico.frame = CGRectMake(0, 0, kPantallaAncho, kPantallaAlto);
      
      [_mainView.paginas addObject:vistaADiagnostico];
-    
-    // Definiciones de Botones Izquierda:
    
     [self inicia];
     
 
 
-    [super viewDidLoad];
+ 
 }
 
 -(void)inicia{
