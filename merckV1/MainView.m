@@ -15,7 +15,7 @@
 
 
 #define kPantallaAncho 1024
-#define kPantallaAlto 748
+#define kPantallaAlto 768
 #define kIndicesDerecho 300
 #define kIndicesMedio 200
 #define kIndicesIzquierdo 100
@@ -42,8 +42,13 @@
         imagen.frame = CGRectMake(0, 0, kPantallaAncho, kPantallaAlto);
         imagen.backgroundColor = [UIColor whiteColor];
         [paginas addObject:imagen];
-        [imagen release];
-        
+
+        NSString *nombreImagen2 =@"home2";
+        UIImageView *imagen2 = [[UIImageView alloc] initWithImage: [UIImage imageNamed:nombreImagen2]];
+        imagen2.frame = CGRectMake(0, 0, kPantallaAncho, kPantallaAlto);
+
+        imagen2.backgroundColor = [UIColor whiteColor];
+        [paginas addObject:imagen2];
         
         //Agregar animaciones HTML5
         vista2 = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kPantallaAncho, kPantallaAlto)];

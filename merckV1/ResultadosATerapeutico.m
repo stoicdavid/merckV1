@@ -24,7 +24,7 @@
 
 #define kNumeroDiapositivas 3
 #define kPantallaAncho 1024
-#define kPantallaAlto 748
+#define kPantallaAlto 768
 
 
 @implementation ResultadosATerapeutico
@@ -34,6 +34,7 @@
 @synthesize reporteButton;
 @synthesize datos;
 @synthesize indice;
+
 
 @synthesize popOverController;
 
@@ -63,12 +64,38 @@
     
 }
 
+
+-(IBAction) capturarDatos:(id)sender{
+    // Create the modal view controller
+    AddData *captura = [[AddData alloc] initWithNibName:@"AddData" bundle:nil];
+    //captura.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    //captura.modalPresentationStyle = UIModalPresentationFullScreen;
+    // We are the delegate responsible for dismissing the modal view 
+    captura.delegate=self;
+
+    captura.datos=self.datos;
+    // Create a Navigation controller
+    //UINavigationController *navController = [[UINavigationController alloc]
+  //                                          initWithRootViewController:captura];
+    
+    // show the navigation controller modally
+  [self presentModalViewController:captura animated:YES];
+    
+    // Clean up resources
+//[navController release];
+
+}
+
 -(IBAction) enviarResultadosPorCorreo:(id)sender
 {
 
     [self emailImageWithImageData:self.datos];    
 }
 
+
+-(IBAction)dismissModalView:(id)sender{
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 - (void)emailImageWithImageData:(NSData *)data
 {
@@ -83,6 +110,7 @@
 //    [picker setToRecipients:[NSArray arrayWithObjects:@"pablo@litoimagen.com", nil]];
     
     //    Fill out the email body text
+
     NSString *emailBody = @"";
     
     // This is not an HTML formatted email
@@ -109,7 +137,8 @@
 
 -(IBAction)mostrarDiapositiva8A:(id)sender
 {
-    DiapositivaAdicional *controlador1 = [[DiapositivaAdicional alloc] init];    
+    DiapositivaAdicional *controlador1 = [[DiapositivaAdicional alloc] init];
+    
     [self presentModalViewController:controlador1 animated:YES];
     controlador1.imagen.image = [UIImage imageNamed:@"Diapositiva_8A"];
     [controlador1 release];
@@ -122,6 +151,7 @@
 -(IBAction)mostrarDiapositiva8B:(id)sender
 {
     DiapositivaAdicional *controlador1 = [[DiapositivaAdicional alloc] init];    
+    
     [self presentModalViewController:controlador1 animated:YES];
     controlador1.imagen.image = [UIImage imageNamed:@"Diapositiva_8B"];
     [controlador1 release];
@@ -134,11 +164,16 @@
     DiapositivaAdicional *dummy = [[DiapositivaAdicional alloc] init];
     dummy.documents=@"R-Resumen de Resultados.pdf";
     controlador1.dataSource =dummy;
+    controlador1.delegate =dummy;
     controlador1.currentPreviewItemIndex =0;
+
+
     [self presentModalViewController:controlador1 animated:YES];
     
-    [dummy release];
+    //[dummy release];
     [controlador1 release];
+
+
 }
 
 
@@ -150,13 +185,21 @@
 {
     QLPreviewController *controlador1 = [[QLPreviewController alloc] init];    
     DiapositivaAdicional *dummy = [[DiapositivaAdicional alloc] init];
-    dummy.documents=@"TR Tratamiento Personalizado.pdf";
-    controlador1.dataSource =dummy;
-    controlador1.currentPreviewItemIndex =0;
-    [self presentModalViewController:controlador1 animated:YES];
 
-    [dummy release];
-    [controlador1 release];    
+
+    dummy.documents=@"TP Tratamiento Personalizado.pdf";
+    controlador1.dataSource =dummy;
+        controlador1.delegate=dummy;
+    controlador1.currentPreviewItemIndex =0;
+
+    [self presentModalViewController:controlador1 animated:YES];
+    
+
+
+//    [dummy release];
+    [controlador1 release]; 
+
+
 }
 
 
@@ -208,8 +251,9 @@
     
     
     NSString *nombre = [NSString stringWithFormat:@"D_0_%d", [[[(ElementosDerecha *)[self.definiciones objectAtIndex:0] selecccionesDerecha] lastObject] intValue]];
-    
+ 
     if ([nombre isEqualToString:@"D_0_0"]){
+
         [tipo setText:@"Tratamiento Agresivo"];
         [tipo2 setText:@"Tratamiento Agresivo"];
     }else{
@@ -541,7 +585,6 @@
     merckV1AppDelegate *delegado = [[UIApplication sharedApplication] delegate];
     UIGraphicsBeginImageContext(delegado.window.bounds.size);
     
-
     CALayer *test = delegado.window.layer;
     [test renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -650,6 +693,26 @@
 //    UIBarButtonItem *dis = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(regresarDiapositiva5)];
 //    NSArray *a = [NSArray arrayWithObject:dis];
 //    [self setToolbarItems:a animated:YES];
+    
+    [tipo setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];   
+    
+    [fluo setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];   
+    [qt setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];   
+    [add setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];   
+    [kras setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];   
+    [por setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];   
+
+    [fluo2 setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];   
+    [qt2 setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];   
+    [add2 setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];   
+    [kras2 setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];   
+    [por2 setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]]; 
+    
+    [titulo1 setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]]; 
+    [titulo2 setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]]; 
+    [titulo3 setFont:[UIFont fontWithName:@"AgfaRotisSansSerif" size:32]];     
+
+    
     
     self.vistaScroll.delegate = self;
     

@@ -10,14 +10,18 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import <QuartzCore/QuartzCore.h>
+#import "AddData.h"
 
-@interface ResultadosATerapeutico : UIViewController  <MFMailComposeViewControllerDelegate, UIScrollViewDelegate> {
+@interface ResultadosATerapeutico : UIViewController  <MFMailComposeViewControllerDelegate, UIScrollViewDelegate,AddDataDelegate> {
     
     
     int indice;
     UIScrollView *vistaScroll;
     NSArray *definiciones;
     NSData * datos;
+    
+
+    
     
     //UIView *vistaMovilDerecha;
     
@@ -43,6 +47,8 @@
     IBOutlet UILabel *fecha;
     
     UIBarButtonItem *reporteButton;
+
+    
     
 }
 
@@ -55,8 +61,11 @@
 @property (nonatomic, retain) NSArray *definiciones;
 @property (nonatomic, retain) NSData *datos;
 
+
+
 -(void) transicionDeVista:(UIView *) view haciaAlpha:(float) valorAlpha;
 
+-(IBAction) capturarDatos:(id) sender;
 
 -(IBAction) enviarResultadosPorCorreo:(id) sender;
 
@@ -68,6 +77,7 @@
 
 
 -(IBAction) mostrarIndiceDePublicaciones: (id) sender;
+-(IBAction) capturarDatos: (id) sender;
 
 -(IBAction)mostrarDiapositiva8A:(id)sender;
 -(IBAction)mostrarDiapositiva8B:(id)sender;

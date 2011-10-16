@@ -92,7 +92,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -180,7 +180,7 @@
         case 0:
              detailViewController = [[ZeroIndiceTableView alloc] init];
             
-            [(ZeroIndiceTableView *)detailViewController setNombreDelRecurso: @"Art. Original"];
+            [(ZeroIndiceTableView *)detailViewController setNombreDelRecurso: @"Art_original"];
             
             // Pass the selected object to the new view controller.            
             break;
@@ -217,6 +217,13 @@
             
             [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
              [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"Piessevaux", @"Piessevaux",
+                                                   nil]
+              
+                                         forKeys:[NSArray arrayWithObjects:@"title", @"archivo",
+                                                  nil] ]];
+            
+            [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
+             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"CRYSTAL", @"CRYSTAL",
                                                    nil]
               
                                          forKeys:[NSArray arrayWithObjects:@"title", @"archivo",

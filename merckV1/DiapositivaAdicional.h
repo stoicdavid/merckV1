@@ -26,4 +26,5 @@
 -(NSInteger) numberOfPreviewItemsInPreviewController:(QLPreviewController *) controller;
 - (id <QLPreviewItem>) previewController: (QLPreviewController *) controller previewItemAtIndex:(NSInteger)index;
 
+
 @end

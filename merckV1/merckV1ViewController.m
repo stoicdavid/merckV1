@@ -13,7 +13,7 @@
 
 #define kNumeroDiapositivas 5
 #define kPantallaAncho 1024
-#define kPantallaAlto 748
+#define kPantallaAlto 768
 
 // Tags Botones
 #define kIndicesMenos 400
@@ -274,11 +274,12 @@
         [elementoCorrespondiente.selecccionesDerecha addObject:seleccionEnNumero];        
     }
     
-    [self actualizarBotones:sender];
+    
 //    [self habilitarBotonesIzquierda:(UIButton *)[self.view viewWithTag:self.indiceIzquierdoSeleccionado+kIndicesIzquierdo]];
     [self desaparecerBoton:sender enTiempo:0.2];
     [self desaparecerBoton:(UIButton *)[self.view viewWithTag:sender.tag-300] enTiempo:0.2];
     [self desaparecerBoton:(UIButton *)[self.view viewWithTag:sender.tag+100] enTiempo:0.2];
+    [self actualizarBotones:sender];
 }
 
 

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Merk Erbitux</string>
+	<string>MAT Erbitux</string>
 	<key>CFBundleDocumentTypes</key>
 	<array/>
 	<key>CFBundleExecutable</key>
@@ -40,6 +40,10 @@
 	<string>MainWindow</string>
 	<key>UIApplicationExitsOnSuspend</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AgfaRotSanSer</string>
+	</array>
 	<key>UIInterfaceOrientation</key>
 	<string>UIInterfaceOrientationLandscapeLeft</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
@@ -51,5 +55,7 @@
 	<array/>
 	<key>UTImportedTypeDeclarations</key>
 	<array/>
+	<key>UIStatusBarHidden</key>
+	<true/>
 </dict>
 </plist>
