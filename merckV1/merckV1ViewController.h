@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MainView.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ResultadosATerapeutico.h"
+#import "ElementosDerecha.h"
 
 
 @interface merckV1ViewController : UIViewController {
@@ -16,7 +19,7 @@
     
   //  UIScrollView *scrollParaSlides;
 
-    MainView* _mainView;
+    MainView *_mainView;
     
     NSArray *posicionesDerechaOrden;
     
@@ -30,7 +33,7 @@
     
 }
 
-@property (nonatomic,retain)MainView* _mainView;
+@property (nonatomic,retain)MainView *_mainView;
 
 @property (nonatomic, retain) NSArray *posicionesDerechaOrden;
 

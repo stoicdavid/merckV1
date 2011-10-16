@@ -6,10 +6,9 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ElementosDerecha.h"
+
 #import "merckV1ViewController.h"
-#import <QuartzCore/QuartzCore.h>
-#import "ResultadosATerapeutico.h"
+
 
 #define kNumeroDiapositivas 5
 #define kPantallaAncho 1024

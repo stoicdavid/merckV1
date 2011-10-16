@@ -7,11 +7,7 @@
 //
 
 #import "MainView.h"
-#import "page.h"
-#import <QuartzCore/QuartzCore.h>
-#import "ResultadosATerapeutico.h"
-#import "ElementosDerecha.h"
-#import "merckV1ViewController.h"
+
 
 
 #define kPantallaAncho 1024
@@ -23,12 +19,77 @@
 
 @implementation MainView
 @synthesize paginas,swipes;
+@synthesize animationLayer = _animationLayer;
+@synthesize pathLayer = _pathLayer;
+
+
+- (void) setupDrawingLayer
+{
+    if (self.pathLayer != nil) {
+        [self.pathLayer removeFromSuperlayer];
+        self.pathLayer = nil;
+    }
+    
+    CGRect pathRect = CGRectInset(self.animationLayer.bounds, 100.0f, 100.0f);
+    CGPoint inicial = CGPointMake(717.49f, 228.31f);
+    CGPoint topLeft		= CGPointMake(CGRectGetMinX(pathRect), CGRectGetMinY(pathRect) + CGRectGetHeight(pathRect) * 2.0f/3.0f);
+    CGPoint bottomLeft 	= CGPointMake(CGRectGetMinX(pathRect), CGRectGetMinY(pathRect));
+
+    CGPoint bottomRight = CGPointMake(CGRectGetMaxX(pathRect), CGRectGetMinY(pathRect));
+    CGPoint topRight	= CGPointMake(CGRectGetMaxX(pathRect), CGRectGetMinY(pathRect) + CGRectGetHeight(pathRect) * 2.0f/3.0f);
+    
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:inicial];
+    [path addLineToPoint:topLeft];
+    [path addLineToPoint:bottomLeft];
+    [path addLineToPoint:bottomRight];
+    [path addLineToPoint:topRight];
+    [path addLineToPoint:inicial];
+
+    
+    CAShapeLayer *pathLayer = [CAShapeLayer layer];
+    pathLayer.frame = self.animationLayer.bounds;
+    pathLayer.bounds = pathRect;
+    pathLayer.geometryFlipped = YES;
+    pathLayer.path = path.CGPath;
+    pathLayer.strokeColor = [[UIColor orangeColor] CGColor];
+    pathLayer.fillColor = nil;
+    pathLayer.lineWidth = 10.0f;
+    pathLayer.lineJoin = kCALineJoinBevel;
+    
+    [self.animationLayer addSublayer:pathLayer];
+    
+    self.pathLayer = pathLayer;
+}
+
+
+- (void) startAnimation
+{
+    [self.pathLayer removeAllAnimations];
+    
+    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    pathAnimation.duration = 10.0;
+    pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
+    pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
+    [self.pathLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
+    
+    
+}  
 
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        //717.49f, 228.31f
+        self.animationLayer = [CALayer layer];
+        self.animationLayer.frame = CGRectMake(668.0f, 220.0f, 
+                                               93.0f, 
+                                               427.0f);
+        [self.layer addSublayer:self.animationLayer];
+        
+        
         
         //Agregar vista inicial
         
@@ -65,6 +126,12 @@
             [paginas addObject:diapo];
             [diapo release];
         }        
+        NSString *pag2=@"pagina2";
+        UIImageView *pagina1 = [[UIImageView alloc] initWithImage: [UIImage imageNamed:pag2]];
+        pagina1.frame = CGRectMake(0, 0, kPantallaAncho, kPantallaAlto);
+        pagina1.backgroundColor = [UIColor whiteColor];
+        [paginas addObject:pagina1];
+        
         
         //Agregar reconocedor de gesturas
         
@@ -179,6 +246,12 @@
 
         [self addSubview:[paginas objectAtIndex:pageNumber]];
         //imagen.hidden=NO;
+        if (swipes==3) {
+            
+
+        [self setupDrawingLayer];
+        [self startAnimation];
+        }            
     }
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.4];
@@ -200,7 +273,12 @@
     [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
     
     [[self layer] addAnimation:animation forKey:nil];
+
 }
+
+
+
+
 
 
 // Only override drawRect: if you perform custom drawing.
@@ -218,7 +296,10 @@
     [paginas dealloc];
     [imagen dealloc];
     [vista2 dealloc];
-    [vista3 dealloc];    
+    [vista3 dealloc];
+    self.animationLayer = nil;
+    self.pathLayer = nil;
+
     [super dealloc];
 }
 
