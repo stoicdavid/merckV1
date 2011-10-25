@@ -12,7 +12,7 @@
 
 
 @implementation PrimerIndiceTableViewController
-
+@synthesize detailViewController;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -79,8 +79,14 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) return YES;
-    else return NO;
+//    if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft)return YES;
+//    else if (interfaceOrientation == UIInterfaceOrientationLandscapeRight)return YES;
+//    else return NO;
+    
+    BOOL innerResult = [detailViewController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+
+    return innerResult;
+    
 }
 
 #pragma mark - Table view data source
@@ -173,7 +179,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewController *detailViewController;
+    
     
     switch (indexPath.row) {
         case 0:

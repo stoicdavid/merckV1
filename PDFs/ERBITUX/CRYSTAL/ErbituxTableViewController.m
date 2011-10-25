@@ -79,7 +79,9 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) return YES;
+    else if (interfaceOrientation == UIInterfaceOrientationLandscapeRight)return YES;
+    else return NO;
 }
 
 #pragma mark - Table view data source
@@ -296,7 +298,7 @@
                                                   nil] ]];
             
             [[(LastLevelTableViewController *)detailViewController diccionarioDeDatos] addObject:
-             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"FOLPRECHT", @"Folprecht",
+             [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"FOLPRECHT", @"Folprecht1",
                                                    nil] 
               
                                          forKeys:[NSArray arrayWithObjects:@"title", @"archivo",

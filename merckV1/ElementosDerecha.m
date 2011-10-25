@@ -21,15 +21,15 @@
 {
     if ((self = [super init]))
     {
-        self.excluyente = banderaExcluyente;
-        self.numeroElementos = unNumero;
-        self.posicionesDerecha = [[NSArray alloc] initWithArray:posiciones];
-        self.selecccionesDerecha = [[NSMutableArray alloc] initWithCapacity:10];
+        excluyente = banderaExcluyente;
+        numeroElementos = unNumero;
+        posicionesDerecha = [[NSArray alloc] initWithArray:posiciones];
+        selecccionesDerecha = [[NSMutableArray alloc] initWithCapacity:10];
     }
     
-    NSLog(@"Numero de Elementos: %d", [self.posicionesDerecha count]);
-    
-    for(int i=0; i< [self.posicionesDerecha count]; i++)
+    //NSLog(@"Numero de Elementos: %d", [self.posicionesDerecha count]);
+    int i;
+    for(i=0; i< [self.posicionesDerecha count]; i++)
     {
         NSLog(@"Numero: %d", [[self.posicionesDerecha objectAtIndex:i] intValue]);
     }
@@ -39,8 +39,8 @@
 
 -(void) dealloc
 {
-    [self.posicionesDerecha release];
-    [self.selecccionesDerecha release];
+    [posicionesDerecha release];
+    [selecccionesDerecha release];
     [super dealloc];
 }
 

@@ -10,7 +10,8 @@
 
 
 @interface PrimerIndiceTableViewController : UITableViewController {
-    
+ UITableViewController *detailViewController;   
 }
+@property(nonatomic,retain) UITableViewController *detailViewController;   
 
 @end

@@ -102,8 +102,8 @@
 
     
     ElementosDerecha *elementoActual = (ElementosDerecha *)[self.definicionesIzquierda objectAtIndex:self.indiceIzquierdoSeleccionado];
-    
-    for (int i=0;i < elementoActual.numeroElementos; i++)
+    int i;
+    for (i=0;i < elementoActual.numeroElementos; i++)
     {
     //    if ([self offsetDerechoAPartirdePosicionMedia:i] == self.indiceDerechoSeleccionado && !elementoActual.excluyente)
         if ([self offsetDerechoAPartirdePosicionMedia:i] == self.indiceDerechoSeleccionado)    
@@ -227,8 +227,8 @@
 -(int) offsetDerechoAPartirdePosicionMedia: (int) indicePosicion
 {
     int resultado=0;
-    
-    for (int i=0; i<self.indiceIzquierdoSeleccionado;i++)
+    int i;
+    for (i=0; i<self.indiceIzquierdoSeleccionado;i++)
     {
         ElementosDerecha *elementoActual = (ElementosDerecha *) [self.definicionesIzquierda objectAtIndex:i];
         
@@ -404,6 +404,8 @@
 
 - (void)dealloc
 {
+    [posicionesDerechaOrden release];
+    [posicionesDerechaEquivalentes release];
     [super dealloc];
 }
 
@@ -482,7 +484,7 @@
                                   //                                                             esExcluyente:YES conPosicionesIzquierdas:[NSArray arrayWithObject: [NSNumber numberWithInt:11]]], // Color                                                                                                 
                                   nil];
     
-    self.posicionesDerechaOrden = [NSArray arrayWithObjects:
+    posicionesDerechaOrden = [NSArray arrayWithObjects:
                                    [NSNumber numberWithInt:0], // 1
                                    [NSNumber numberWithInt:0], // 2 
                                    [NSNumber numberWithInt:0], // 3
@@ -500,7 +502,7 @@
     
     
     
-    self.posicionesDerechaEquivalentes = [NSArray arrayWithObjects:
+    posicionesDerechaEquivalentes = [NSArray arrayWithObjects:
                                           
                                           [self.definicionesIzquierda objectAtIndex:0], // 1
                                           [self.definicionesIzquierda objectAtIndex:1], // 2 
@@ -530,9 +532,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) return YES;
-    else if (interfaceOrientation == UIInterfaceOrientationLandscapeRight)return YES;
-    else return NO;
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 
 }
 

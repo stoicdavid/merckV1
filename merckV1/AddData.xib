@@ -669,7 +669,6 @@
 						<string key="NSFrame">{{658, 512}, {236, 122}}</string>
 						<reference key="NSSuperview" ref="221011994"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:640</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>

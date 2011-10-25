@@ -279,48 +279,18 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 352;
 }
 
 -(void) textViewDidBeginEditing:(UITextView *)textView{
-    CGRect textFieldRect = [self.view.window convertRect:textView.bounds fromView:textView];
-    CGRect viewRect = [self.view.window convertRect:self.view.bounds fromView:self.view];
-	CGFloat midline = textFieldRect.origin.x + 0.5 * textFieldRect.size.width;
-    CGFloat numerator = midline - viewRect.origin.x - MINIMUM_SCROLL_FRACTION * viewRect.size.width;
-    CGFloat denominator =(MAXIMUM_SCROLL_FRACTION - MINIMUM_SCROLL_FRACTION)* viewRect.size.width;
-    CGFloat heightFraction = numerator / denominator;
-	
-	if (heightFraction < 0.0)
-    {
-        heightFraction = 0.0;
-    }
-    else if (heightFraction > 1.0)
-    {
-        heightFraction = 1.0;
-    }
-	
-	UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (orientation != UIInterfaceOrientationLandscapeLeft || orientation != UIInterfaceOrientationLandscapeRight)
-    {
-        animatedDistance = floor(PORTRAIT_KEYBOARD_HEIGHT * heightFraction);
-    }
-    else
-    {
-        animatedDistance = floor(LANDSCAPE_KEYBOARD_HEIGHT * heightFraction);
-    }
-	
-	CGRect viewFrame = self.view.frame;
-    viewFrame.origin.x -= animatedDistance;
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
-    
-    [self.view setFrame:viewFrame];
-    
-    [UIView commitAnimations];   
+    [self scroll:textView]; 
 }
 
 -(void)textViewDidEndEditing:(UITextView *)textView
 {
+    UIInterfaceOrientation orienta = [[UIApplication sharedApplication] statusBarOrientation];
     CGRect viewFrame = self.view.frame;
-    viewFrame.origin.x += animatedDistance;
+    if (orienta == UIInterfaceOrientationLandscapeLeft) {
+        viewFrame.origin.x += animatedDistance;
+    }else{
+        viewFrame.origin.x -= animatedDistance;
+    }
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
@@ -340,10 +310,21 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 352;
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    CGRect textFieldRect = [self.view.window convertRect:textField.bounds fromView:textField];
+    [self scroll:textField];
+}
+
+
+-(void) scroll:(UIView *)texto{
+
+    
+    
+    UIInterfaceOrientation orienta = [[UIApplication sharedApplication] statusBarOrientation];
+    
+    CGRect textFieldRect = [self.view.window convertRect:texto.bounds fromView:texto];
     CGRect viewRect = [self.view.window convertRect:self.view.bounds fromView:self.view];
-	CGFloat midline = textFieldRect.origin.x + 0.5 * textFieldRect.size.width;
+    CGFloat midline = textFieldRect.origin.x + 0.5 * textFieldRect.size.width;
     CGFloat numerator = midline - viewRect.origin.x - MINIMUM_SCROLL_FRACTION * viewRect.size.width;
+    
     CGFloat denominator =(MAXIMUM_SCROLL_FRACTION - MINIMUM_SCROLL_FRACTION)* viewRect.size.width;
     CGFloat heightFraction = numerator / denominator;
 	
@@ -356,18 +337,30 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 352;
         heightFraction = 1.0;
     }
 	
-	UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (orientation != UIInterfaceOrientationLandscapeLeft || orientation != UIInterfaceOrientationLandscapeRight)
+	
+    if (UIInterfaceOrientationIsLandscape(orienta) )
     {
-        animatedDistance = floor(PORTRAIT_KEYBOARD_HEIGHT * heightFraction);
+        animatedDistance = floor(LANDSCAPE_KEYBOARD_HEIGHT * heightFraction);
+        NSLog(@"Hola orientacion landscape");
     }
     else
     {
-        animatedDistance = floor(LANDSCAPE_KEYBOARD_HEIGHT * heightFraction);
+        animatedDistance = floor(PORTRAIT_KEYBOARD_HEIGHT * heightFraction);
+                NSLog(@"Hola orientacion portrait");
     }
 	
 	CGRect viewFrame = self.view.frame;
-    viewFrame.origin.x -= animatedDistance;
+    if (orienta == UIInterfaceOrientationLandscapeLeft) {
+        viewFrame.origin.x -= animatedDistance;
+                NSLog(@"Hola orientacion izquieda");
+    }else{
+        viewFrame.origin.x += animatedDistance;
+                        NSLog(@"Hola orientacion derecha");
+    }
+    
+    NSLog(@"campo:%f,vista:%f,medio:%f,numerador:%f,deno:%f,altura:%f",textFieldRect,viewRect,midline,numerator,denominator,heightFraction);
+
+    
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
@@ -376,14 +369,20 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 352;
     [self.view setFrame:viewFrame];
     
     [UIView commitAnimations];
+    [texto release];
 	//enviar.enabled=YES;
 }
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    UIInterfaceOrientation orienta = [[UIApplication sharedApplication] statusBarOrientation];
     CGRect viewFrame = self.view.frame;
-    viewFrame.origin.x += animatedDistance;
+    if (orienta == UIInterfaceOrientationLandscapeLeft) {
+        viewFrame.origin.x += animatedDistance;
+    }else{
+        viewFrame.origin.x -= animatedDistance;
+    }
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
@@ -416,7 +415,11 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 352;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-	return YES;
+    //return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+    if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft)
+        return YES;
+    else
+        return NO;
 }
 
 - (void) dealloc{

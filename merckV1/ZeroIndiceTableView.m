@@ -9,6 +9,7 @@
 #import "ZeroIndiceTableView.h"
 #import "PrimerIndiceTableViewController.h"
 
+
 @implementation ZeroIndiceTableView
 
 @synthesize nombreDelRecurso, idiomasDisponibles, docInteractionController;
@@ -108,7 +109,9 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
+    if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) return YES;
+    else if (interfaceOrientation == UIInterfaceOrientationLandscapeRight)return YES;
+    else return NO;
 }
 
 #pragma mark - Table view data source
@@ -192,9 +195,10 @@
     fileURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[[self.idiomasDisponibles objectAtIndex:indexPath.row] valueForKey:@"archivo"] 
                                                                      ofType:@"pdf"]];
     
-    
     [self setupDocumentControllerWithURL:fileURL];
     [self.docInteractionController presentPreviewAnimated:YES];
+    //UIInterfaceOrientation orienta = [[UIApplication sharedApplication] statusBarOrientation];
+    //[self.docInteractionController shouldAutorotateToInterfaceOrientation:orienta];
      
 }
 
@@ -213,9 +217,15 @@
 
 - (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)interactionController
 {
-    
     return self;
+
 }
 
+- (void) documentInteractionController: (UIDocumentInteractionController *) controller{
+    UIInterfaceOrientation orienta = [[UIApplication sharedApplication] statusBarOrientation];
+    [self shouldAutorotateToInterfaceOrientation:orienta];
+}
+
+    
 
 @end

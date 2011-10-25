@@ -78,6 +78,7 @@
 {
     // Return YES for supported orientations
     if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) return YES;
+    else if (interfaceOrientation == UIInterfaceOrientationLandscapeRight)return YES;
     else return NO;
 }
 
@@ -241,6 +242,7 @@
     detailViewController.title = [[(UITableViewCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath] textLabel] text];    
     [self.navigationController pushViewController:detailViewController animated:YES];
     
-    [detailViewController release];}
+    [detailViewController release];
+}
 
 @end

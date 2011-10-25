@@ -128,6 +128,7 @@
             NSString *fileString = [[NSBundle mainBundle] pathForResource: nomArchivo ofType: @"html" ];
             NSURL *newURL = [[NSURL alloc] initFileURLWithPath: fileString];    
             diapo.pag = newURL;
+            [newURL release];    
             [paginas addObject:diapo];
             [diapo release];
             }else{
@@ -143,9 +144,10 @@
                 self.animationLayer.frame = CGRectMake(0.0, 0.0, 
                                                        93.0f, 
                                                        427.0f);
+                [anima2 release];
             }
             
-            
+
         }        
        
         
@@ -167,6 +169,8 @@
         swipeLeft.delegate = self;
         [self addGestureRecognizer:swipeLeft];
         [swipeLeft release];
+
+
         
         
     }
@@ -238,7 +242,8 @@
         [self addSubview:vista3];
         vista3.hidden=NO;
         NSURLRequest *newURLRequest = [[NSURLRequest alloc] initWithURL: [[paginas objectAtIndex:pageNumber] pag] ];
-        [vista3 loadRequest:newURLRequest];     
+        [vista3 loadRequest:newURLRequest]; 
+        [newURLRequest release];
     }else {
             [vista3 removeFromSuperview];
             [[paginas objectAtIndex:paginas.count-1] removeFromSuperview];
@@ -284,7 +289,7 @@
 {
     if (swipes==0) {
         [self addSubview:imagen];
-    }else{
+    }else if (swipes<5){
         [self addSubview:vista3];
     }
 }

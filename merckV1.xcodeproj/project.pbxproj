@@ -209,8 +209,8 @@
 		AAD7EA711419DE7D00C180F6 /* merckV1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD7EA701419DE7D00C180F6 /* merckV1ViewController.xib */; };
 		AAD933A61446B76000485E94 /* AddData.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD933A51446B76000485E94 /* AddData.xib */; };
 		AAD97B47144BA43E00782913 /* ASCO GI 2011_3_CRYS_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD97B46144BA43E00782913 /* ASCO GI 2011_3_CRYS_en.pdf */; };
-		AAD97B4B144BA50A00782913 /* Folprecht_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD97B49144BA50A00782913 /* Folprecht_en.pdf */; };
-		AAD97B4C144BA50A00782913 /* Folprecht_es.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD97B4A144BA50A00782913 /* Folprecht_es.pdf */; };
+		AAD97B4B144BA50A00782913 /* Folprecht1_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD97B49144BA50A00782913 /* Folprecht1_en.pdf */; };
+		AAD97B4C144BA50A00782913 /* Folprecht1_es.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD97B4A144BA50A00782913 /* Folprecht1_es.pdf */; };
 		AAD97B4E144BA5C100782913 /* Hurwitz 2009_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD97B4D144BA5C100782913 /* Hurwitz 2009_en.pdf */; };
 		AADCA709141D2CF7006F58C2 /* abordaje_01.png in Resources */ = {isa = PBXBuildFile; fileRef = AADCA701141D2CF7006F58C2 /* abordaje_01.png */; };
 		AADCA70A141D2CF7006F58C2 /* abordaje_05.png in Resources */ = {isa = PBXBuildFile; fileRef = AADCA702141D2CF7006F58C2 /* abordaje_05.png */; };
@@ -533,8 +533,8 @@
 		AAD7EA701419DE7D00C180F6 /* merckV1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = merckV1ViewController.xib; sourceTree = "<group>"; };
 		AAD933A51446B76000485E94 /* AddData.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddData.xib; sourceTree = "<group>"; };
 		AAD97B46144BA43E00782913 /* ASCO GI 2011_3_CRYS_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ASCO GI 2011_3_CRYS_en.pdf"; sourceTree = "<group>"; };
-		AAD97B49144BA50A00782913 /* Folprecht_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Folprecht_en.pdf; sourceTree = "<group>"; };
-		AAD97B4A144BA50A00782913 /* Folprecht_es.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Folprecht_es.pdf; sourceTree = "<group>"; };
+		AAD97B49144BA50A00782913 /* Folprecht1_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Folprecht1_en.pdf; sourceTree = "<group>"; };
+		AAD97B4A144BA50A00782913 /* Folprecht1_es.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Folprecht1_es.pdf; sourceTree = "<group>"; };
 		AAD97B4D144BA5C100782913 /* Hurwitz 2009_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Hurwitz 2009_en.pdf"; sourceTree = "<group>"; };
 		AADCA701141D2CF7006F58C2 /* abordaje_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abordaje_01.png; sourceTree = "<group>"; };
 		AADCA702141D2CF7006F58C2 /* abordaje_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abordaje_05.png; sourceTree = "<group>"; };
@@ -1097,8 +1097,8 @@
 				AAD97B46144BA43E00782913 /* ASCO GI 2011_3_CRYS_en.pdf */,
 				AA3CD0F8141E4E7A00EF2144 /* ESMO 2010_en.pdf */,
 				AA3CD0F9141E4E7A00EF2144 /* ESMO 2010_es.pdf */,
-				AAD97B49144BA50A00782913 /* Folprecht_en.pdf */,
-				AAD97B4A144BA50A00782913 /* Folprecht_es.pdf */,
+				AAD97B49144BA50A00782913 /* Folprecht1_en.pdf */,
+				AAD97B4A144BA50A00782913 /* Folprecht1_es.pdf */,
 			);
 			path = OPUS;
 			sourceTree = "<group>";
@@ -1616,8 +1616,8 @@
 				AA106531144B93D1005A05E0 /* xlink in Resources */,
 				AA106534144B948D005A05E0 /* 4apag.html in Resources */,
 				AAD97B47144BA43E00782913 /* ASCO GI 2011_3_CRYS_en.pdf in Resources */,
-				AAD97B4B144BA50A00782913 /* Folprecht_en.pdf in Resources */,
-				AAD97B4C144BA50A00782913 /* Folprecht_es.pdf in Resources */,
+				AAD97B4B144BA50A00782913 /* Folprecht1_en.pdf in Resources */,
+				AAD97B4C144BA50A00782913 /* Folprecht1_es.pdf in Resources */,
 				AAD97B4E144BA5C100782913 /* Hurwitz 2009_en.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1678,11 +1678,11 @@
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -1706,7 +1706,7 @@
 				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -1724,20 +1724,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Enrique Culebro Karam (FJZ9Y5B6E9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Enrique Culebro Karam (FJZ9Y5B6E9)";
 				COPY_PHASE_STRIP = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "merckV1/merckV1-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "merckV1/merckV1-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B2260FFD-E89C-4105-9336-167E861986A5";
+				PROVISIONING_PROFILE = "E43E8E43-573E-4FE4-A1B9-40F43FBA2F3A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E43E8E43-573E-4FE4-A1B9-40F43FBA2F3A";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1747,16 +1748,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Enrique Culebro Karam (FJZ9Y5B6E9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Enrique Culebro Karam (FJZ9Y5B6E9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "merckV1/merckV1-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "merckV1/merckV1-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "79C45162-9ACA-4B4D-8A44-82EF0C29767B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "79C45162-9ACA-4B4D-8A44-82EF0C29767B";
+				PROVISIONING_PROFILE = "E43E8E43-573E-4FE4-A1B9-40F43FBA2F3A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -1775,7 +1776,7 @@
 				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -1794,17 +1795,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Enrique Culebro Karam (FJZ9Y5B6E9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Enrique Culebro Karam (FJZ9Y5B6E9)";
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "merckV1/merckV1-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "merckV1/merckV1-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "E43E8E43-573E-4FE4-A1B9-40F43FBA2F3A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E43E8E43-573E-4FE4-A1B9-40F43FBA2F3A";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;

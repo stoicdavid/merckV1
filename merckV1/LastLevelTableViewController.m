@@ -19,7 +19,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.diccionarioDeDatos = [[NSMutableArray alloc] init];
+        diccionarioDeDatos = [[NSMutableArray alloc] init];
         // Custom initialization
     }
     return self;
@@ -27,7 +27,7 @@
 
 - (void)dealloc
 {
-    [self.diccionarioDeDatos release];
+    [diccionarioDeDatos release];
     [super dealloc];
 }
 
@@ -82,7 +82,9 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) return YES;
+    else if (interfaceOrientation == UIInterfaceOrientationLandscapeRight)return YES;
+    else return NO;
 }
 
 #pragma mark - Table view data source

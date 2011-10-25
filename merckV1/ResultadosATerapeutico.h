@@ -12,7 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AddData.h"
 
-@interface ResultadosATerapeutico : UIViewController  <MFMailComposeViewControllerDelegate, UIScrollViewDelegate,AddDataDelegate> {
+@interface ResultadosATerapeutico : UIViewController  < UIScrollViewDelegate,AddDataDelegate> {
     
     
     int indice;
@@ -67,11 +67,11 @@
 
 -(IBAction) capturarDatos:(id) sender;
 
--(IBAction) enviarResultadosPorCorreo:(id) sender;
+//-(IBAction) enviarResultadosPorCorreo:(id) sender;
 
-- (void)emailImageWithImageData:(NSData *)data;
+//- (void)emailImageWithImageData:(NSData *)data;
 
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error;
+//- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error;
 
 
 

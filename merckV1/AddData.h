@@ -40,13 +40,13 @@
 //    NSString *dato4;
 //    NSString *dato5;
 //    NSString *dato6;
-//    NSString *color;
+    NSString *color;
     
     
 
 }
 
-@property (nonatomic, retain ) NSString *color;
+@property (nonatomic, copy ) NSString *color;
 @property (nonatomic, retain) id <AddDataDelegate> delegate;
 @property (nonatomic, retain) NSData *datos;
 @property (nonatomic, retain) NSData *datos2;
@@ -59,5 +59,5 @@
 
 -(IBAction)eligeColor:(UIButton *)sender;
 //-(void) actualizaColores:(UIButton *)sender;
-
+-(void) scroll:(UIView *)text;
 @end

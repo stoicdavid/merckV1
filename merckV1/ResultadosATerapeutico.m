@@ -85,55 +85,55 @@
 //[navController release];
 
 }
-
--(IBAction) enviarResultadosPorCorreo:(id)sender
-{
-
-    [self emailImageWithImageData:self.datos];    
-}
+//
+//-(IBAction) enviarResultadosPorCorreo:(id)sender
+//{
+//
+//    [self emailImageWithImageData:self.datos];    
+//}
 
 
 -(IBAction)dismissModalView:(id)sender{
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)emailImageWithImageData:(NSData *)data
-{
-    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-    picker.mailComposeDelegate = self;
-    
-    // Set the subject of email
-    [picker setSubject:@"Abordaje Terapéutico - Merck"];
-    
-    // Add email addresses
-    // Notice three sections: "to" "cc" and "bcc" 
-//    [picker setToRecipients:[NSArray arrayWithObjects:@"pablo@litoimagen.com", nil]];
-    
-    //    Fill out the email body text
-
-    NSString *emailBody = @"";
-    
-    // This is not an HTML formatted email
-    [picker setMessageBody:emailBody isHTML:NO];
-    
-    // Attach image data to the email
-    // 'CameraImage.png' is the file name that will be attached to the email
-    [picker addAttachmentData:data mimeType:@"image/png" fileName:@"CameraImage"];
-    
-    // Show email view    
-    [self presentModalViewController:picker animated:YES];
-    
-    // Release picker
-    [picker release];
-}
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
-{
-    // Called once the email is sent
-    // Remove the email view controller  
-        //[self.view viewWithTag:1000].alpha=1.0;
-    [self dismissModalViewControllerAnimated:YES];
-}
+//- (void)emailImageWithImageData:(NSData *)data
+//{
+//    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+//    picker.mailComposeDelegate = self;
+//    
+//    // Set the subject of email
+//    [picker setSubject:@"Abordaje Terapéutico - Merck"];
+//    
+//    // Add email addresses
+//    // Notice three sections: "to" "cc" and "bcc" 
+////    [picker setToRecipients:[NSArray arrayWithObjects:@"pablo@litoimagen.com", nil]];
+//    
+//    //    Fill out the email body text
+//
+//    NSString *emailBody = @"";
+//    
+//    // This is not an HTML formatted email
+//    [picker setMessageBody:emailBody isHTML:NO];
+//    
+//    // Attach image data to the email
+//    // 'CameraImage.png' is the file name that will be attached to the email
+//    [picker addAttachmentData:data mimeType:@"image/png" fileName:@"CameraImage"];
+//    
+//    // Show email view    
+//    [self presentModalViewController:picker animated:YES];
+//    
+//    // Release picker
+//    [picker release];
+//}
+//
+//- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
+//{
+//    // Called once the email is sent
+//    // Remove the email view controller  
+//        //[self.view viewWithTag:1000].alpha=1.0;
+//    [self dismissModalViewControllerAnimated:YES];
+//}
 
 -(IBAction)mostrarDiapositiva8A:(id)sender
 {
@@ -170,9 +170,9 @@
 
     [self presentModalViewController:controlador1 animated:YES];
     
-    //[dummy release];
-    [controlador1 release];
 
+    [controlador1 release];
+    //[dummy release];
 
 }
 
@@ -196,9 +196,9 @@
     
 
 
-//    [dummy release];
+    
     [controlador1 release]; 
-
+    //[dummy release];
 
 }
 
@@ -785,9 +785,11 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) return YES;
-    else if (interfaceOrientation == UIInterfaceOrientationLandscapeRight)return YES;
-    else return NO;
+    //return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+    if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft)
+        return YES;
+    else
+        return NO;
 }
 
 
